@@ -1,0 +1,72 @@
+{
+	"For Loop": {
+		"scope": "ddp",
+		"prefix": "Für",
+		"body": [
+			"Für jede Zahl ${1:index} von ${2:Start} bis ${3:Ende}, mache:",
+			"\t${4:Schreibe die Zahl ${1:index}"
+		],
+		"description": "Für Schleife"
+	},
+	"While Loop": {
+		"scope": "ddp",
+		"prefix": "Solange",
+		"body": [
+			"Solange ${1:Bedingung} ist, mache:",
+			"\t$BLOCK_COMMENT_START Schleifen Körper $BLOCK_COMMENT_END"
+		],
+		"description": "Solange Schleife"
+	},
+	"Do While Loop": {
+		"scope": "ddp",
+		"prefix": "Mache",
+		"body": [
+			"Mache:",
+			"\t$BLOCK_COMMENT_START Schleifen Körper $BLOCK_COMMENT_END",
+			"Solange ${1:Bedingung} ist."
+		],
+		"description": "Mache-solange Schleife"
+	},
+	"Repeat": {
+		"scope": "ddp",
+		"prefix": "Mache",
+		"body": [
+			"Mache:",
+			"\t$BLOCK_COMMENT_START Wiederholungs Körper $BLOCK_COMMENT_END",
+			"(${1:Anzahl}) mal."
+		],
+		"description": "Wiederholung"
+	},
+	"If": {
+		"scope": "ddp",
+		"prefix": "Wenn",
+		"body": [
+			"Wenn ${1:Bedingung} ist, dann:",
+			"\t$BLOCK_COMMENT_START Wenn Körper $BLOCK_COMMENT_END",
+			"Wenn aber ${2:Bedingung} ist, dann:",
+			"\t$BLOCK_COMMENT_START Wenn aber Körper $BLOCK_COMMENT_END",
+			"Sonst:",
+			"\t$BLOCK_COMMENT_START Sonst Körper $BLOCK_COMMENT_END"
+		],
+		"description": "Wenn Anweisung"
+	},
+	"Include": {
+		"scope": "ddp",
+		"prefix": "Binde",
+		"body": [
+			"Binde \"${1:Datei-Pfad}\" ein."
+		],
+		"description": "Einbindung"
+	},
+	"Function": {
+		"scope": "ddp",
+		"prefix": "Die Funktion",
+		"body": [
+			"Die Funktion ${1:Name} mit den Parametern ${2:x}, vom Typ ${3:Zahl}, gibt ${4:|nichts,eine Zahl,eine Kommazahl,einen Boolean,einen Buchstaben,einen Text|} zurück, macht:",
+			"\t$BLOCK_COMMENT_START Funktions Körper $BLOCK_COMMENT_END",
+			"Und kann so benutzt werden:",
+			"\t\"${5:Alias}\""
+		],
+		"description": "Funktions Deklaration"
+	}
+}

@@ -35,7 +35,7 @@
 			"patterns": [
 				{
 					"name": "keyword.control.ddp",
-					"match": "\\b((Wenn)|(dann)|(Sonst)|(aber)|(Für)|(Fuer)|(jede)|([Ss]olange)|([Mm]ache)|(zurück)|(Gib)|(von)|(vom)|(bis)|(mit)|(jede)|(jeder)|(Schrittgröße)|(Schrittgroesse))\\b"
+					"match": "\\b((Wenn)|(dann)|(Sonst)|(aber)|(Für)|(Fuer)|(jede[n])|(in)|([Ss]olange)|([Mm]ache)|(zurück)|(Gib)|(von)|(vom)|(bis)|(mit)|(jede)|(jeder)|(Schrittgröße)|(Schrittgroesse))\\b"
 				},
 				{
 					"name": "meta.preprocessor",
@@ -48,7 +48,7 @@
 				},
 				{
 					"name": "keyword.ddp",
-					"match": "\\b([Dd]er)|([Dd]ie)|([Dd]as)|(den)|(ist)|(an)|(Stelle)\\b"
+					"match": "\\b([Dd]er)|([Dd]ie)|([Dd]as)|(den)|(ist)|(an)|(Stelle)|(Funktion)\\b"
 				}
 			]
 		},
@@ -105,20 +105,23 @@
 		"function": {
 			"patterns": [
 				{
-					"name": "support.function.ddp",
-					"match": "Die Funktion (\\w+) (?:mit den Parametern (\\w+(?:,\\s*\\w+)*) vom Typ (\\w+(?:,(\\s*\\w+))*) )?gibt ((nichts)|(einen (Zahl|Kommazahl|Text|Boolean|Buchstabe))) zurück, macht:",
+					"name": "keyword.other.ddp",
+					"match": "Die Funktion (\\w+) (?:mit den Parametern (\\w+(?:,\\s*\\w+)*) vom Typ (\\w+(?:,(\\s*\\w+))*), )?gibt ((nichts)|(einen (Zahl|Kommazahl|Text|Boolean|Buchstabe))) zurück, (macht):",
 					"captures": {
 						"1": {
 							"name": "variable.name.ddp"
 						},
 						"2": {
-							"name": "support.name.ddp"
+							"name": "variable.name.ddp"
 						},
 						"3": {
-							"name": "support.name.ddp"
+							"name": "support.type.ddp"
 						},
 						"5": {
-							"name": "support.name.ddp"
+							"name": "support.type.ddp"
+						},
+						"9": {
+							"name": "keyword.control.ddp"
 						}
 					}
 				},

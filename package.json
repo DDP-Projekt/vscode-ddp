@@ -8,7 +8,8 @@
 		"vscode": "^1.68.0"
 	},
 	"categories": [
-		"Programming Languages"
+		"Programming Languages",
+		"Snippets"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
@@ -25,6 +26,12 @@
 				"language": "ddp",
 				"scopeName": "source.ddp",
 				"path": "./syntaxes/ddp.tmLanguage.json"
+			}
+		],
+		"snippets": [
+			{
+				"language": "ddp",
+				"path": "./snippets/snippets.json"
 			}
 		]
 	},
