@@ -48,7 +48,7 @@
 				},
 				{
 					"name": "keyword.ddp",
-					"match": "\\b([Dd]er)|([Dd]ie)|([Dd]as)|(den)|(ist)|(an)|(Stelle)|(Funktion)\\b"
+					"match": "\\b([Dd]er)|([Dd]ie)|([Dd]as)|(den)|(ist)|(an)|(Stelle)|(Funktion)|(Parametern)\\b"
 				}
 			]
 		},
