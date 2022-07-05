@@ -9,7 +9,7 @@
 			"include": "#function"
 		},
 		{
-			"include": "#keywords"
+			"include": "#literals"
 		},
 		{
 			"include": "#operators"
@@ -18,7 +18,7 @@
 			"include": "#types"
 		},
 		{
-			"include": "#literals"
+			"include": "#keywords"
 		}
 	],
 	"repository": {
@@ -35,7 +35,7 @@
 			"patterns": [
 				{
 					"name": "keyword.control.ddp",
-					"match": "\\b((Wenn)|(dann)|(Sonst)|(aber)|(Für)|(Fuer)|(jede[n])|(in)|([Ss]olange)|([Mm]ache)|(zurück)|(Gib)|(von)|(vom)|(bis)|(mit)|(jede)|(jeder)|(Schrittgröße)|(Schrittgroesse))\\b"
+					"match": "\\b((Wenn)|(dann)|(Sonst)|(aber)|(Für)|(Fuer)|(jede[n])|(in)|([Ss]olange)|([Mm]ache)|(zurück)|(Gib)|(von)|(vom)|(bis)|(jede)|(jeder)|(Schrittgröße)|(mit Schrittgroesse))\\b"
 				},
 				{
 					"name": "meta.preprocessor",
@@ -48,7 +48,7 @@
 				},
 				{
 					"name": "keyword.ddp",
-					"match": "\\b([Dd]er)|([Dd]ie)|([Dd]as)|(den)|(ist)|(an)|(Stelle)|(Funktion)|(Parametern)\\b"
+					"match": "\\b([Dd]er)|([Dd]ie)|([Dd]as)|(den)|(ist)|(an)|(Stelle)|(Funktion)|(Parametern)|(Speichere das Ergebnis von)|(Speichere)\\b"
 				}
 			]
 		},
@@ -56,7 +56,7 @@
 			"patterns": [
 				{
 					"name": "keyword.operator.new.ddp",
-					"match": "\\b((oder)|(und)|(nicht)|(plus)|(minus)|(mal)|(durch)|(modulo)|(hoch)|(Wurzel)|(logisch)|(kontra)|(gleich)|(ungleich)|(kleiner)|(größer)|(groesser)|(als)|(Logarithmus)|(Betrag)|(Länge)|(Laenge)|(Sinus)|(Kosinus)|(Tangens)|(Arkussinus)|(Arkuskosinus)|(Arkustangens)|(Hyperbelsinus)|(Hyperbelkosinus)|(Hyperbeltangens)|(um)|(Bit)|(verschoben)|(nach)|(links)|(rechts)|(zur)|(Basis))\\b"
+					"match": "\\b((oder)|(und)|(nicht)|(plus)|(minus)|(mal)|(durch)|(modulo)|(hoch)|(Wurzel)|(logisch)|(kontra)|(gleich)|(ungleich)|(kleiner)|(größer)|(groesser)|(als)|(Logarithmus)|(Betrag)|(Länge)|(Laenge)|(Sinus)|(Kosinus)|(Tangens)|(Arkussinus)|(Arkuskosinus)|(Arkustangens)|(Hyperbelsinus)|(Hyperbelkosinus)|(Hyperbeltangens)|(um)|(Bit)|(verschoben)|(nach)|(links)|(rechts)|(zur)|(Basis)|(verkettet mit))\\b"
 				}
 			]
 		},
