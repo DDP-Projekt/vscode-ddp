@@ -82,13 +82,29 @@
 		"prefix": "Wenn",
 		"body": [
 			"Wenn ${1:Bedingung} ist, dann:",
-			"\t$BLOCK_COMMENT_START Wenn Körper $BLOCK_COMMENT_END",
-			"Wenn aber ${2:Bedingung} ist, dann:",
-			"\t$BLOCK_COMMENT_START Wenn aber Körper $BLOCK_COMMENT_END",
-			"Sonst:",
-			"\t$BLOCK_COMMENT_START Sonst Körper $BLOCK_COMMENT_END"
+			"\t${2:$BLOCK_COMMENT_START Wenn Körper $BLOCK_COMMENT_END}"
 		],
 		"description": "Wenn Anweisung"
+	},
+	"ElseIf": {
+		"scope": "ddp",
+		"prefix": "Wenn aber",
+		"body": [
+			"Wenn ${1:Bedingung} ist, dann:",
+			"\t${2:$BLOCK_COMMENT_START Wenn Körper $BLOCK_COMMENT_END}",
+			"Wenn aber ${3:Bedingung} ist, dann:",
+			"\t${4:$BLOCK_COMMENT_START Wenn aber Körper $BLOCK_COMMENT_END}"
+		],
+		"description": "Wenn Anweisung mit Wenn aber Anweisung"
+	},
+	"Else": {
+		"scope": "ddp",
+		"prefix": "Sonst",
+		"body": [
+			"Sonst:",
+			"\t${1:$BLOCK_COMMENT_START Sonst Körper $BLOCK_COMMENT_END}"
+		],
+		"description": "Sonst Anweisung"
 	},
 	"Include": {
 		"scope": "ddp",
