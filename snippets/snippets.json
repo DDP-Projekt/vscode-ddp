@@ -44,7 +44,7 @@
 		"prefix": "Für",
 		"body": [
 			"Für jede Zahl ${1:index} von ${2:Start} bis ${3:Ende}, mache:",
-			"\t${4:Schreibe die Zahl ${1:index}}"
+			"\t${4:Schreibe die Zahl ${1:index}}."
 		],
 		"description": "Für Schleife"
 	},
