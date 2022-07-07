@@ -27,7 +27,12 @@
 				{
 					"name": "comment.block.ddp",
 					"begin": "\\[",
-					"end": "\\]"
+					"end": "\\]",
+					"patterns": [
+						{
+							"include": "#comments"
+						}
+					]
 				}
 			]
 		},
