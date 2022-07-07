@@ -1,4 +1,44 @@
 {
+	"Write string": {
+		"scope": "ddp",
+		"prefix": "Schreibe Text",
+		"body": [
+			"Schreibe den Text \"${1:Text hier}\"."
+		],
+		"description": "Schreibe Text"
+	},
+	"Write int": {
+		"scope": "ddp",
+		"prefix": "Schreibe Zahl",
+		"body": [
+			"Schreibe die Zahl ${1:$BLOCK_COMMENT_START Zahl $BLOCK_COMMENT_END}."
+		],
+		"description": "Schreibe Text"
+	},
+	"Write float": {
+		"scope": "ddp",
+		"prefix": "Schreibe Kommazahl",
+		"body": [
+			"Schreibe die Kommazahl ${1:$BLOCK_COMMENT_START Kommazahl $BLOCK_COMMENT_END}."
+		],
+		"description": "Schreibe Text"
+	},
+	"Write bool": {
+		"scope": "ddp",
+		"prefix": "Schreibe Boolean",
+		"body": [
+			"Schreibe den Boolean ${1:$BLOCK_COMMENT_START Boolean Ausdruck $BLOCK_COMMENT_END}."
+		],
+		"description": "Schreibe Text"
+	},
+	"Write char": {
+		"scope": "ddp",
+		"prefix": "Schreibe Buchstabe",
+		"body": [
+			"Schreibe den Buchstaben '${1:Zeichen}'."
+		],
+		"description": "Schreibe Buchstabe"
+	},
 	"For Loop": {
 		"scope": "ddp",
 		"prefix": "Für",
