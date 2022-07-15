@@ -118,7 +118,7 @@
 		"scope": "ddp",
 		"prefix": "Die Funktion",
 		"body": [
-			"Die Funktion ${1:Name} mit den Parametern ${2:x}, vom Typ ${3:Zahl}, gibt ${4:|nichts,eine Zahl,eine Kommazahl,einen Boolean,einen Buchstaben,einen Text|} zurück, macht:",
+			"Die Funktion ${1:Name} mit den Parametern ${2:x}, vom Typ ${3:Zahl}, gibt ${4:nichts} zurück, macht:",
 			"\t$BLOCK_COMMENT_START Funktions Körper $BLOCK_COMMENT_END",
 			"Und kann so benutzt werden:",
 			"\t\"${5:Alias}\""

@@ -132,7 +132,7 @@
 				},
 				{
 					"name": "keyword.control.ddp",
-					"match": "Und kann so benutzt werden:"
+					"match": "[Uu]nd kann so benutzt werden:"
 				}
 			]
 		}
