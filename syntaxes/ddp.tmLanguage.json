@@ -40,7 +40,7 @@
 			"patterns": [
 				{
 					"name": "keyword.control.ddp",
-					"match": "\\b((Wenn)|(dann)|(Sonst)|(aber)|(Für)|(Fuer)|(jede[n])|(in)|([Ss]olange)|([Mm]ache)|(zurück)|(Gib)|(von)|(vom)|(bis)|(jede)|(jeder)|(Schrittgröße)|(mit Schrittgroesse))\\b"
+					"match": "\\b((Wenn)|(dann)|(Sonst)|(aber)|([Ff](ü|(ue))r)|(jede[n])|(in)|([Ss]olange)|([Mm]ache)|(zur(ü|(ue))ck)|([Gg]ib)|(von)|(vom)|(bis)|(jede)|(jeder)|(Schrittgr(ö|(oe))(ß|(ss))e))\\b"
 				},
 				{
 					"name": "meta.preprocessor",
