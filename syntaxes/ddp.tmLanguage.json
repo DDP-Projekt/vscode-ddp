@@ -132,6 +132,15 @@
 				},
 				{
 					"name": "keyword.control.ddp",
+					"match": "ist in (\"[\\s\\S]+\") definiert",
+					"captures": {
+						"1": {
+							"name": "meta.preprocessor.string"
+						}	
+					}
+				},
+				{
+					"name": "keyword.control.ddp",
 					"match": "[Uu]nd kann so benutzt werden:"
 				}
 			]
