@@ -165,5 +165,21 @@
 			"\t\"${8:Alias <x> <y>}\""
 		],
 		"description": "Funktions Deklaration mit mehreren Parametern"
+	},
+	"var-die": {
+		"scope": "ddp",
+		"prefix": "Variable",
+		"body": [
+			"${1|Der,Die|} ${2:Typ} ${3:Name} ist ${4:Wert}."
+		],
+		"description": "Variablen deklaration"
+	},
+	"var-bool": {
+		"scope": "ddp",
+		"prefix": "Variable Boolean",
+		"body": [
+			"Der Boolean ${1:Name} ist ${2|wahr,falsch|} wenn ${3:Ausdruck} ist."
+		],
+		"description": "Variablen deklaration eines Booleans"
 	}
 }
