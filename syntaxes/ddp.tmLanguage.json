@@ -40,7 +40,7 @@
 			"patterns": [
 				{
 					"name": "keyword.control.ddp",
-					"match": "\\b((Wenn)|(dann)|(Sonst)|(aber)|([Ff](ü|(ue))r)|(jede[n])|(in)|([Ss]olange)|([Mm]ache)|(zur(ü|(ue))ck)|([Gg]ib)|(von)|(vom)|(bis)|(jede)|(jeder)|(Schrittgr(ö|(oe))(ß|(ss))e))\\b"
+					"match": "\\b(([Ww]enn)|(dann)|([Ss]onst)|(aber)|([Ff](ü|(ue))r)|(jede[n])|(in)|([Ss]olange)|([Mm]ache)|(zur(ü|(ue))ck)|([Gg]ib)|(von)|(vom)|(bis)|(jede)|(jeder)|(Schrittgr(ö|(oe))(ß|(ss))e))\\b"
 				},
 				{
 					"name": "meta.preprocessor",
@@ -53,7 +53,7 @@
 				},
 				{
 					"name": "keyword.ddp",
-					"match": "\\b([Dd]er)|([Dd]ie)|([Dd]as)|(den)|(ist)|(an)|(Stelle)|(Funktion)|(Parametern)|(Speichere das Ergebnis von)|(Speichere)\\b"
+					"match": "\\b([Dd]er)|([Dd]ie)|([Dd]as)|(de[mn])|(ist)|(an)|(Stelle)|(Funktion)|(Parameter[n])|(Speichere das Ergebnis von)|(Speichere)\\b"
 				}
 			]
 		},
@@ -111,7 +111,7 @@
 			"patterns": [
 				{
 					"name": "keyword.other.ddp",
-					"match": "Die Funktion (\\w+) (?:mit den Parametern (\\w+(?:,\\s*\\w+)*) vom Typ (\\w+(?:,(\\s*\\w+))*), )?gibt ((nichts)|(einen (Zahl|Kommazahl|Text|Boolean|Buchstabe))) zurück, (macht):",
+					"match": "Die Funktion (\\w+) (?:mit de[nm] Parameter[n] (\\w+(?:,\\s*\\w+)*) vom Typ (\\w+(?:,(\\s*\\w+))*), )?gibt ((nichts)|(einen (Zahl|Kommazahl|Text|Boolean|Buchstabe))) zurück, (macht):",
 					"captures": {
 						"1": {
 							"name": "variable.name.ddp"
@@ -132,7 +132,7 @@
 				},
 				{
 					"name": "keyword.control.ddp",
-					"match": "Und kann so benutzt werden:"
+					"match": "[Uu]nd kann so benutzt werden:"
 				}
 			]
 		}
