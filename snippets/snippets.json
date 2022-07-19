@@ -154,5 +154,16 @@
 			"\t\"${7:Alias <x> <y>}\""
 		],
 		"description": "Funktions Deklaration mit mehreren Parametern"
+	},
+	"Function-Extern": {
+		"scope": "ddp",
+		"prefix": "Externe Funktion",
+		"body": [
+			"Die Funktion ${1:Name} mit den Parametern ${2:x} und ${3:y} vom Typ ${4:Zahl} und ${5:Zahl}, gibt ${6:nichts} zurück,",
+			"ist in ${7:\"pfad\"} definiert",
+			"und kann so benutzt werden:",
+			"\t\"${8:Alias <x> <y>}\""
+		],
+		"description": "Funktions Deklaration mit mehreren Parametern"
 	}
 }
