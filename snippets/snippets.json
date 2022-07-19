@@ -122,15 +122,37 @@
 		],
 		"description": "Duden Einbindung"
 	},
-	"Function": {
+	"Funct-NoPram": {
 		"scope": "ddp",
 		"prefix": "Funktion",
 		"body": [
-			"Die Funktion ${1:Name} mit den Parametern ${2:x}, vom Typ ${3:Zahl}, gibt ${4:nichts} zurück, macht:",
+			"Die Funktion ${1:Name} gibt ${2:nichts} zurück, macht:",
 			"\t$BLOCK_COMMENT_START Funktions Körper $BLOCK_COMMENT_END",
 			"Und kann so benutzt werden:",
-			"\t\"${5:Alias}\""
+			"\t\"${3:Alias}\""
 		],
-		"description": "Funktions Deklaration"
+		"description": "Funktions Deklaration ohne Parameter"
+	},
+	"Function-OneParam": {
+		"scope": "ddp",
+		"prefix": "Funktion",
+		"body": [
+			"Die Funktion ${1:Name} mit dem Parameter ${2:x} vom Typ ${3:Zahl}, gibt ${4:nichts} zurück, macht:",
+			"\t$BLOCK_COMMENT_START Funktions Körper $BLOCK_COMMENT_END",
+			"Und kann so benutzt werden:",
+			"\t\"${5:Alias <x>}\""
+		],
+		"description": "Funktions Deklaration mit einem Parameter"
+	},
+	"Function-MultipleParam": {
+		"scope": "ddp",
+		"prefix": "Funktion",
+		"body": [
+			"Die Funktion ${1:Name} mit den Parametern ${2:x} und ${3:y} vom Typ ${4:Zahl} und ${5:Zahl}, gibt ${6:nichts} zurück, macht:",
+			"\t$BLOCK_COMMENT_START Funktions Körper $BLOCK_COMMENT_END",
+			"Und kann so benutzt werden:",
+			"\t\"${7:Alias <x> <y>}\""
+		],
+		"description": "Funktions Deklaration mit mehreren Parametern"
 	}
 }
