@@ -13,7 +13,7 @@
 		"body": [
 			"Schreibe die Zahl ${1:$BLOCK_COMMENT_START Zahl $BLOCK_COMMENT_END}."
 		],
-		"description": "Schreibe Text"
+		"description": "Schreibe Zahl"
 	},
 	"Write float": {
 		"scope": "ddp",
@@ -21,7 +21,7 @@
 		"body": [
 			"Schreibe die Kommazahl ${1:$BLOCK_COMMENT_START Kommazahl $BLOCK_COMMENT_END}."
 		],
-		"description": "Schreibe Text"
+		"description": "Schreibe Kommazahl"
 	},
 	"Write bool": {
 		"scope": "ddp",
@@ -29,7 +29,7 @@
 		"body": [
 			"Schreibe den Boolean ${1:$BLOCK_COMMENT_START Boolean Ausdruck $BLOCK_COMMENT_END}."
 		],
-		"description": "Schreibe Text"
+		"description": "Schreibe Boolean"
 	},
 	"Write char": {
 		"scope": "ddp",
