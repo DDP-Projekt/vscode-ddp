@@ -114,12 +114,15 @@
 		],
 		"description": "Einbindung"
 	},
-	"Include-std": {
+	"Function": {
 		"scope": "ddp",
-		"prefix": "Binde-Duden",
+		"prefix": "Funktion",
 		"body": [
-			"Binde \"Duden/${1:Datei}\" ein."
+			"Die Funktion ${1:Name} mit den Parametern ${2:x}, vom Typ ${3:Zahl}, gibt ${4:nichts} zurück, macht:",
+			"\t$BLOCK_COMMENT_START Funktions Körper $BLOCK_COMMENT_END",
+			"Und kann so benutzt werden:",
+			"\t\"${5:Alias}\""
 		],
-		"description": "Duden Einbindung"
+		"description": "Funktions Deklaration"
 	}
 }
