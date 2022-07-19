@@ -114,6 +114,14 @@
 		],
 		"description": "Einbindung"
 	},
+	"Include-std": {
+		"scope": "ddp",
+		"prefix": "Binde-Duden",
+		"body": [
+			"Binde \"Duden/${1:Datei-Pfad}\" ein."
+		],
+		"description": "Duden Einbindung"
+	},
 	"Function": {
 		"scope": "ddp",
 		"prefix": "Funktion",
