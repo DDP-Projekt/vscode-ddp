@@ -40,7 +40,7 @@
 			"patterns": [
 				{
 					"name": "keyword.control.ddp",
-					"match": "\\b(([Ww]enn)|(dann)|([Ss]onst)|(aber)|([Ff](ü|(ue))r)|(jede[n])|(in)|([Ss]olange)|([Mm]ache)|(zur(ü|(ue))ck)|([Gg]ib)|(von)|(vom)|(bis)|(jede)|(jeder)|(Schrittgr(ö|(oe))(ß|(ss))e))\\b"
+					"match": "\\b(([Ww]enn)|(dann)|([Ss]onst)|(aber)|([Ff](ü|(ue))r)|(jede[n])|(in)|([Ss]olange)|([Mm]ache)|(zur(ü|(ue))ck)|([Gg]ib)|([Vv]erlasse die Funktion)|(von)|(vom)|(bis)|(jede)|(jeder)|(Schrittgr(ö|(oe))(ß|(ss))e))\\b"
 				},
 				{
 					"name": "meta.preprocessor",
@@ -53,7 +53,7 @@
 				},
 				{
 					"name": "keyword.ddp",
-					"match": "\\b([Dd]er)|([Dd]ie)|([Dd]as)|(de[mn])|(ist)|(an)|(Stelle)|(Funktion)|(Parameter[n])|(Speichere das Ergebnis von)|(Speichere)|(einer)|(eine)|(Liste)|(aus)|(bestehend)\\b"
+					"match": "\\b([Dd]er)|([Dd]ie)|([Dd]as)|(de[mn])|(ist)|(an)|(Stelle)|(Funktion)|(Parameter[n])|([Ss]peichere das Ergebnis von)|([Ss]peichere)|(einer)|(eine)|(leere[n])|(Liste)|(aus)|(bestehend)|(besteht)\\b"
 				}
 			]
 		},
@@ -61,7 +61,7 @@
 			"patterns": [
 				{
 					"name": "keyword.operator.new.ddp",
-					"match": "\\b((oder)|(und)|(nicht)|(plus)|(minus)|(mal)|(durch)|(modulo)|(hoch)|(Wurzel)|(logisch)|(kontra)|(gleich)|(ungleich)|(kleiner)|(größer)|(groesser)|(als)|(Logarithmus)|(Betrag)|(Länge)|(Laenge)|(Größe)|(Groesse)|(Sinus)|(Kosinus)|(Tangens)|(Arkussinus)|(Arkuskosinus)|(Arkustangens)|(Hyperbelsinus)|(Hyperbelkosinus)|(Hyperbeltangens)|(um)|(Bit)|(verschoben)|(nach)|(links)|(rechts)|(zur)|(Basis)|(verkettet mit))\\b"
+					"match": "\\b((oder)|(und)|(nicht)|(plus)|(minus)|(mal)|(durch)|(modulo)|(hoch)|(Wurzel)|(logisch)|(kontra)|(gleich)|(ungleich)|(kleiner)|(größer)|(groesser)|(als)|(Logarithmus)|(Betrag)|(Länge)|(Laenge)|(Größe)|(Groesse)|(Sinus)|(Kosinus)|(Tangens)|(Arkussinus)|(Arkuskosinus)|(Arkustangens)|(Hyperbelsinus)|(Hyperbelkosinus)|(Hyperbeltangens)|(um)|(Bit)|(verschoben)|(nach)|(links)|(rechts)|(zur)|(Basis)|(verkettet mit)|([Vv]erringere)|([Ee]rhöhe)|([Ee]rhoehe)|([Tt]eile)|([Vv]ervielfache)|([Ss]ubtrahiere)|([Aa]ddiere)|([Mm]ultipliziere)|([Dd]ividiere)|([Nn]egiere))\\b"
 				}
 			]
 		},
