@@ -40,7 +40,7 @@
 			"patterns": [
 				{
 					"name": "keyword.control.ddp",
-					"match": "\\b(([Ww]enn)|(dann)|([Ss]onst)|(aber)|([Ff](ü|(ue))r)|(jede[n])|(in)|([Ss]olange)|([Mm]ache)|(zur(ü|(ue))ck)|([Gg]ib)|([Vv]erlasse die Funktion)|(von)|(vom)|(bis)|(jede)|(jeder)|(Schrittgr(ö|(oe))(ß|(ss))e))\\b"
+					"match": "\\b(([Ww]enn)|(dann)|([Ss]onst)|(aber)|([Ff](ü|(ue))r)|(jede[n]?)|(in)|([Ss]olange)|([Mm]ache)|(zur(ü|(ue))ck)|([Gg]ib)|([Vv]erlasse die Funktion)|(von)|(vom)|(bis)|(jede)|(jeder)|(Schrittgr(ö|(oe))(ß|(ss))e))\\b"
 				},
 				{
 					"name": "meta.preprocessor",
@@ -53,7 +53,7 @@
 				},
 				{
 					"name": "keyword.ddp",
-					"match": "\\b([Dd]er)|([Dd]ie)|([Dd]as)|(de[mn])|(ist)|(an)|(Stelle)|(Funktion)|(Parameter[n])|([Ss]peichere das Ergebnis von)|([Ss]peichere)|(einer)|(eine)|(leere[n])|(Liste)|(aus)|(bestehend)|(besteht)\\b"
+					"match": "\\b([Dd]er)|([Dd]ie)|([Dd]as)|(de[mn])|(ist)|(an)|(Stelle)|(Funktion)|(Parameter[n]?)|([Ss]peichere das Ergebnis von)|([Ss]peichere)|(einer)|(eine)|(leere[n]?)|(Liste)|(aus)|(bestehend)|(besteht)\\b"
 				}
 			]
 		},
@@ -69,7 +69,7 @@
 			"patterns": [
 				{
 					"name": "support.type.ddp",
-					"match": "\\b((Zahl)|(Kommazahl)|(Boolean)|(Buchstabe[n])|(Text)|(Zahlen Liste)|(Kommazahlen Liste)|(Boolean Liste)|(Buchstaben Liste)|(Text Liste)|(Zahlen Referenz)|(Kommazahlen Referenz)|(Boolean Referenz)|(Buchstaben Referenz)|(Text Referenz)|(Zahlen Listen Referenz)|(Kommazahlen Listen Referenz)|(Boolean Listen Referenz)|(Buchstaben Listen Referenz)|(Text Listen Referenz))\\b"
+					"match": "\\b((Zahl)|(Kommazahl)|(Boolean)|(Buchstabe[n]?)|(Text)|(Zahlen Liste)|(Kommazahlen Liste)|(Boolean Liste)|(Buchstaben Liste)|(Text Liste)|(Zahlen Referenz)|(Kommazahlen Referenz)|(Boolean Referenz)|(Buchstaben Referenz)|(Text Referenz)|(Zahlen Listen Referenz)|(Kommazahlen Listen Referenz)|(Boolean Listen Referenz)|(Buchstaben Listen Referenz)|(Text Listen Referenz))\\b"
 				}
 			]
 		},
@@ -111,7 +111,7 @@
 			"patterns": [
 				{
 					"name": "keyword.other.ddp",
-					"match": "Die Funktion (\\w+) (?:mit de[nm] Parameter[n] (\\w+(?:,\\s*\\w+)*) vom Typ (\\w+(?:,(\\s*\\w+))*), )?gibt ((nichts)|(einen (Zahl|Kommazahl|Text|Boolean|Buchstabe))) zurück, (macht):",
+					"match": "Die Funktion (\\w+) (?:mit de[nm] Parametern? (\\w+(?:,\\s*\\w+)*) vom Typ (\\w+(?:,(\\s*\\w+))*), )?gibt ((nichts)|(einen (Zahl|Kommazahl|Text|Boolean|Buchstabe))) zurück, (macht):",
 					"captures": {
 						"1": {
 							"name": "variable.name.ddp"
