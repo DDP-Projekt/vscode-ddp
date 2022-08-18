@@ -181,5 +181,13 @@
 			"Der Boolean ${1:Name} ist ${2|wahr,falsch|} wenn ${3:Ausdruck} ist."
 		],
 		"description": "Variablen deklaration eines Booleans"
+	},
+	"mutate": {
+		"scope": "ddp",
+		"prefix": "Speichere",
+		"body": [
+			"Speichere ${1:Ausdruck} in ${2:Variable}."
+		],
+		"description": ""
 	}
 }
