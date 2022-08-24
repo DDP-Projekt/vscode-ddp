@@ -53,7 +53,7 @@
 				},
 				{
 					"name": "keyword.ddp",
-					"match": "\\b([Dd]er)|([Dd]ie)|([Dd]as)|(de[mn])|(ist)|(an)|(Stelle)|(Funktion)|(Parameter[n]?)|([Ss]peichere das Ergebnis von)|([Ss]peichere)|(einer)|(eine)|(leere[n]?)|(Liste)|(aus)|(bestehend)|(besteht)\\b"
+					"match": "\\b([Dd]er)|([Dd]ie)|([Dd]as)|(de[mn])|(ist)|(an)|(Stelle)|(Funktion)|(Parameter[n]?)|([Ss]peichere das Ergebnis von)|([Ss]peichere)|(einer)|(eine)|(leere[n]?)|(Liste)|(aus)|(bestehend)|(besteht)|(Mal)\\b"
 				}
 			]
 		},

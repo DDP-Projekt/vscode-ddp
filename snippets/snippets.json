@@ -39,6 +39,14 @@
 		],
 		"description": "Schreibe Buchstabe"
 	},
+	"Write": {
+		"scope": "ddp",
+		"prefix": "Schreibe",
+		"body": [
+			"Schreibe ${1:Wert}."
+		],
+		"description": "Schreibe Wert"
+	},
 	"For Loop": {
 		"scope": "ddp",
 		"prefix": "Für",
@@ -166,6 +174,15 @@
 		],
 		"description": "Funktions Deklaration mit mehreren Parametern"
 	},
+	"Function-Alias": {
+		"scope": "ddp",
+		"prefix": "Und kann",
+		"body": [
+			"Und kann so benutzt werden:",
+			"\t\"${1:Alias}\""
+		],
+		"description": "Alias definition"
+	},
 	"var-die": {
 		"scope": "ddp",
 		"prefix": "Variable",
@@ -189,5 +206,29 @@
 			"Speichere ${1:Ausdruck} in ${2:Variable}."
 		],
 		"description": ""
+	},
+	"index": {
+		"scope": "ddp",
+		"prefix": ["an", "an der", "Stelle"],
+		"body": [
+			"an der Stelle ${1:Ausdruck}"
+		],
+		"description": "Listen Indexierung"
+	},
+	"empty list 1": {
+		"scope": "ddp",
+		"prefix": ["eine leere", "leere"],
+		"body": [
+			" eine leere ${1:Typ} Liste"
+		],
+		"description": "Leere Liste 1"
+	},
+	"empty list 2": {
+		"scope": "ddp",
+		"prefix": ["einer leeren", "leeren"],
+		"body": [
+			" einer leeren ${1:Typ} Liste"
+		],
+		"description": "Leere Liste 2"
 	}
 }
