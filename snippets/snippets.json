@@ -183,6 +183,14 @@
 		],
 		"description": "Alias definition"
 	},
+	"Alias-Decl": {
+		"scope": "ddp",
+		"prefix": ["Alias", "Der Alias"],
+		"body": [
+			"Der Alias \"${1:Alias}\" steht für die Funktion ${2:Funktion}."
+		],
+		"description": "Alias declaration"
+	},
 	"var-die": {
 		"scope": "ddp",
 		"prefix": "Variable",

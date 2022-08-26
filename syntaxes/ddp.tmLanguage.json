@@ -142,6 +142,21 @@
 				{
 					"name": "keyword.control.ddp",
 					"match": "[Uu]nd kann so benutzt werden:"
+				},
+				{
+					"name": "keyword.ddp",
+					"match": "Der (Alias) (\"[\\s\\S]+\") steht für die Funktion (\\w+)",
+					"captures": {
+						"1": {
+							"name": "support.type.ddp"
+						},
+						"2": {
+							"name": "meta.preprocessor.string"
+						},
+						"3": {
+							"name": "variable.name.ddp"
+						}
+					}
 				}
 			]
 		}
