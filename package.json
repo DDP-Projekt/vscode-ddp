@@ -43,6 +43,13 @@
 				"language": "ddp",
 				"path": "./snippets/snippets.json"
 			}
+		],
+		"commands": [
+			{
+				"command": "ddp.languageserver.restart",
+				"title": "DDP: Restart Language Server",
+				"description": "Restart the running instance of the language server"
+			}
 		]
 	},
 	"activationEvents": [

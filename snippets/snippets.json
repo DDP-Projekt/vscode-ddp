@@ -132,7 +132,10 @@
 	},
 	"Funct-NoPram": {
 		"scope": "ddp",
-		"prefix": "Funktion",
+		"prefix": [
+			"Die Funktion",
+			"Funktion"
+		],
 		"body": [
 			"Die Funktion ${1:Name} gibt ${2:nichts} zurück, macht:",
 			"\t$BLOCK_COMMENT_START Funktions Körper $BLOCK_COMMENT_END",
@@ -143,7 +146,10 @@
 	},
 	"Function-OneParam": {
 		"scope": "ddp",
-		"prefix": "Funktion",
+		"prefix": [
+			"Die Funktion",
+			"Funktion"
+		],
 		"body": [
 			"Die Funktion ${1:Name} mit dem Parameter ${2:x} vom Typ ${3:Zahl}, gibt ${4:nichts} zurück, macht:",
 			"\t$BLOCK_COMMENT_START Funktions Körper $BLOCK_COMMENT_END",
@@ -154,7 +160,10 @@
 	},
 	"Function-MultipleParam": {
 		"scope": "ddp",
-		"prefix": "Funktion",
+		"prefix": [
+			"Die Funktion",
+			"Funktion"
+		],
 		"body": [
 			"Die Funktion ${1:Name} mit den Parametern ${2:x} und ${3:y} vom Typ ${4:Zahl} und ${5:Zahl}, gibt ${6:nichts} zurück, macht:",
 			"\t$BLOCK_COMMENT_START Funktions Körper $BLOCK_COMMENT_END",
