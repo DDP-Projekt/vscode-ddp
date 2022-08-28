@@ -81,7 +81,7 @@
 		"body": [
 			"Mache:",
 			"\t$BLOCK_COMMENT_START Wiederholungs Körper $BLOCK_COMMENT_END",
-			"(${1:Anzahl}) mal."
+			"${1:Anzahl} Mal."
 		],
 		"description": "Wiederholung"
 	},
@@ -185,7 +185,10 @@
 	},
 	"Alias-Decl": {
 		"scope": "ddp",
-		"prefix": ["Alias", "Der Alias"],
+		"prefix": [
+			"Alias",
+			"Der Alias"
+		],
 		"body": [
 			"Der Alias \"${1:Alias}\" steht für die Funktion ${2:Funktion}."
 		],
@@ -217,7 +220,11 @@
 	},
 	"index": {
 		"scope": "ddp",
-		"prefix": ["an", "an der", "Stelle"],
+		"prefix": [
+			"an",
+			"an der",
+			"Stelle"
+		],
 		"body": [
 			"an der Stelle ${1:Ausdruck}"
 		],
@@ -225,7 +232,10 @@
 	},
 	"empty list 1": {
 		"scope": "ddp",
-		"prefix": ["eine leere", "leere"],
+		"prefix": [
+			"eine leere",
+			"leere"
+		],
 		"body": [
 			" eine leere ${1:Typ} Liste"
 		],
@@ -233,7 +243,10 @@
 	},
 	"empty list 2": {
 		"scope": "ddp",
-		"prefix": ["einer leeren", "leeren"],
+		"prefix": [
+			"einer leeren",
+			"leeren"
+		],
 		"body": [
 			" einer leeren ${1:Typ} Liste"
 		],

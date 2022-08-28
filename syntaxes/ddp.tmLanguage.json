@@ -40,7 +40,7 @@
 			"patterns": [
 				{
 					"name": "keyword.control.ddp",
-					"match": "\\b(([Ww]enn)|(dann)|([Ss]onst)|(aber)|([Ff](ü|(ue))r)|(jede[n]?)|(in)|([Ss]olange)|([Mm]ache)|(zur(ü|(ue))ck)|([Gg]ib)|([Vv]erlasse die Funktion)|(von)|(vom)|(bis)|(jede)|(jeder)|(Schrittgr(ö|(oe))(ß|(ss))e))\\b"
+					"match": "\\b(([Ww]enn)|(dann)|([Ss]onst)|(aber)|([Ff](ü|(ue))r)|(jede[n]?)|(in)|([Ss]olange)|([Mm]ache)|(zur(ü|(ue))ck)|([Gg]ib)|([Vv]erlasse die Funktion)|(von)|(vom)|(bis)|(jede)|(jeder)|(Schrittgr(ö|(oe))(ß|(ss))e))|(Mache)|(Mal)\\b"
 				},
 				{
 					"name": "meta.preprocessor",
@@ -53,7 +53,7 @@
 				},
 				{
 					"name": "keyword.ddp",
-					"match": "\\b([Dd]er)|([Dd]ie)|([Dd]as)|(de[mn])|(ist)|(an)|(Stelle)|(Funktion)|(Parameter[n]?)|([Ss]peichere das Ergebnis von)|([Ss]peichere)|(einer)|(eine)|(leere[n]?)|(Liste)|(aus)|(bestehend)|(besteht)|(Mal)\\b"
+					"match": "\\b([Dd]er)|([Dd]ie)|([Dd]as)|(de[mn])|(ist)|(an)|(Stelle)|(Funktion)|(Parameter[n]?)|([Ss]peichere das Ergebnis von)|([Ss]peichere)|(einer)|(eine)|(leere[n]?)|(Liste)|(aus)|(bestehend)|(besteht)\\b"
 				}
 			]
 		},
@@ -136,7 +136,7 @@
 					"captures": {
 						"1": {
 							"name": "meta.preprocessor.string"
-						}	
+						}
 					}
 				},
 				{
