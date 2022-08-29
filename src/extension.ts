@@ -51,14 +51,35 @@ export function activate(ctx: vscode.ExtensionContext) {
 			return;
 		}
 
+		let config = vscode.workspace.getConfiguration('ddp');
+		if (config.has("DDPPATH")) {
+			let ddppath = config.get("DDPPATH");
+			if (ddppath !== "") {
+				DDPPATH = config.get("DDPPATH");
+			}
+		}
 		if (DDPPATH === undefined) {
 			DDPPATH = "";
 		}
 
-		out.appendLine(currentFile);
 		let exe = path.join(DDPPATH, 'kddp.exe').replace(new RegExp('\\' + path.sep, 'g'), '/');
 		let filePath = currentFile.replace(new RegExp('\\' + path.sep, 'g'), '/');
-		let command = exe + " run " + filePath;
+
+		let gccFlags = "", externGccFlags = "";
+		if (config.has("run.gccFlags")) {
+			let flags = config.get<string>("run.gccFlags");
+			if (flags !== undefined) {
+				gccFlags = flags;
+			}
+		}
+		if (config.has("run.externGccFlags")) {
+			let flags = config.get<string>("run.externGccFlags");
+			if (flags !== undefined) {
+				externGccFlags = flags;
+			}
+		}
+
+		let command = exe + ' run ' + filePath + ' --verbose' + ' --gcc_flags="' + gccFlags + '" --extern_gcc_flags="' + externGccFlags + '"';
 
 		let terminal = vscode.window.activeTerminal;
 		if (terminal === undefined) {

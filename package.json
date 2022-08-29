@@ -55,7 +55,27 @@
 				"title": "DDP: Run the current file",
 				"description": "Runs the currently open file using $kddp run"
 			}
-		]
+		],
+		"configuration": {
+			"title": "DDP",
+			"properties": {
+				"ddp.DDPPATH": {
+					"type": "string",
+					"default": "",
+					"description": "overrides the environment variable DDPPATH locally"
+				},
+				"ddp.run.gccFlags": {
+					"type": "string",
+					"default": "",
+					"description": "gcc_flags that are passed to $kddp run as --gcc_flags"
+				},
+				"ddp.run.externGccFlags": {
+					"type": "string",
+					"default": "",
+					"description": "extern_gcc_flags that are passed to $kddp run as --extern_gcc_flags"
+				}
+			}
+		}
 	},
 	"activationEvents": [
 		"onLanguage:ddp"
