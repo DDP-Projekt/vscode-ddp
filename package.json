@@ -57,7 +57,8 @@
 			{
 				"command": "ddp.run.file",
 				"title": "DDP: Run the current file",
-				"description": "Runs the currently open file using $kddp run"
+				"description": "Runs the currently open file using $kddp run",
+				"icon": "$(run)"
 			}
 		],
 		"configuration": {
@@ -84,6 +85,15 @@
 					"description": "adds the --verbose flag to $kddp run"
 				}
 			}
+		},
+		"menus": {
+			"editor/title/run": [
+				{
+					"command": "ddp.run.file",
+					"when": "resourceLangId == ddp",
+					"group": "navigation"
+				}
+			]
 		}
 	},
 	"activationEvents": [
