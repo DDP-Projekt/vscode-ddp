@@ -49,6 +49,11 @@
 				"command": "ddp.languageserver.restart",
 				"title": "DDP: Restart Language Server",
 				"description": "Restart the running instance of the language server"
+			},
+			{
+				"command": "ddp.run.file",
+				"title": "DDP: Run the current file",
+				"description": "Runs the currently open file using $kddp run"
 			}
 		]
 	},
