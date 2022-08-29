@@ -79,7 +79,14 @@ export function activate(ctx: vscode.ExtensionContext) {
 			}
 		}
 
-		let command = exe + ' run ' + filePath + ' --verbose' + ' --gcc_flags="' + gccFlags + '" --extern_gcc_flags="' + externGccFlags + '"';
+		let command = exe + ' run ' + filePath + ' --gcc_flags="' + gccFlags + '" --extern_gcc_flags="' + externGccFlags + '"';
+
+		if (config.has("run.verbose")) {
+			let verbose = config.get<boolean>("run.verbose");
+			if (verbose !== undefined && verbose) {
+				command += ' --verbose';
+			}
+		}
 
 		let terminal = vscode.window.activeTerminal;
 		if (terminal === undefined) {
