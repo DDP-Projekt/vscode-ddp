@@ -260,5 +260,21 @@
 			" einer leeren ${1:Typ} Liste"
 		],
 		"description": "Leere Liste 2"
+	},
+	"list literal 1": {
+		"scope": "ddp",
+		"prefix": "eine Liste, die aus",
+		"body": [
+			"eine Liste, die aus ${1:Werte} besteht"
+		],
+		"description": "Listen Literal 1"
+	},
+	"list literal 2": {
+		"scope": "ddp",
+		"prefix": "einer Liste, die aus",
+		"body": [
+			"einer Liste, die aus ${1:Werte} besteht"
+		],
+		"description": "Listen Literal 2"
 	}
 }
