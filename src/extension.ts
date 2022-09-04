@@ -3,6 +3,7 @@
 import * as vscode from 'vscode';
 import * as langsrv from 'vscode-languageclient/node';
 import * as path from 'path';
+import * as os from 'os';
 
 let DDPPATH = process.env.DDPPATH;
 
@@ -62,7 +63,7 @@ export function activate(ctx: vscode.ExtensionContext) {
 			DDPPATH = "";
 		}
 
-		let exe = path.join(DDPPATH, 'kddp.exe').replace(new RegExp('\\' + path.sep, 'g'), '/');
+		let exe = path.join(DDPPATH, 'bin', os.platform() === 'win32' ? 'kddp.exe' : 'kddp').replace(new RegExp('\\' + path.sep, 'g'), '/');
 		let filePath = currentFile.replace(new RegExp('\\' + path.sep, 'g'), '/');
 
 		let gccFlags = "", externGccFlags = "";
@@ -79,7 +80,13 @@ export function activate(ctx: vscode.ExtensionContext) {
 			}
 		}
 
-		let command = exe + ' run ' + filePath + ' --gcc_flags="' + gccFlags + '" --extern_gcc_flags="' + externGccFlags + '"';
+		let command = exe + ' run ' + filePath;
+		if (gccFlags !== "") {
+			command = command + ' --gcc_flags="' + gccFlags + '"';
+		}
+		if (externGccFlags !== "") {
+			command = command + ' --extern_gcc_flags="' + externGccFlags + '"';
+		}
 
 		if (config.has("run.verbose")) {
 			let verbose = config.get<boolean>("run.verbose");
