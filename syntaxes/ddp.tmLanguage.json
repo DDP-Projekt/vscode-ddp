@@ -53,7 +53,7 @@
 				},
 				{
 					"name": "keyword.ddp",
-					"match": "\\b([Dd]er)|([Dd]ie)|([Dd]as)|(de[mn])|(ist)|(an)|(Stelle)|(Funktion)|(Parameter[n]?)|([Ss]peichere das Ergebnis von)|([Ss]peichere)|(einer)|(eine)|(leere[n]?)|(Liste)|(aus)|(besteht)\\b"
+					"match": "\\b([Dd]er)|([Dd]ie)|([Dd]as)|(de[mn])|(ist)|(an)|(Stelle)|([Ss]peichere das Ergebnis von)|([Ss]peichere)|(einer)|(eine)|(leere[n]?)|(Liste)|(aus)|(besteht)\\b"
 				}
 			]
 		},
@@ -111,7 +111,22 @@
 			"patterns": [
 				{
 					"name": "keyword.other.ddp",
-					"match": "Die Funktion (\\w+) (?:mit de[nm] Parametern? (\\w+(?:,\\s*\\w+)*) vom Typ (\\w+(?:,(\\s*\\w+))*), )?gibt ((nichts)|(einen (Zahl|Kommazahl|Text|Boolean|Buchstabe))) zurück, (macht):",
+					"match": "Die Funktion (\\w+) gibt (nichts|einen? \\w+) zurück,(\\s*macht:)?",
+					"captures": {
+						"1": {
+							"name": "variable.name.ddp"
+						},
+						"2": {
+							"name": "support.type.ddp"
+						},
+						"3": {
+							"name": "keyword.control.ddp"
+						}
+					}
+				},
+				{
+					"name": "keyword.other.ddp",
+					"match": "Die Funktion (\\w+) mit dem Parameter (\\w+) vom Typ (\\w+),\\s*gibt (nichts|einen? \\w+) zurück,(\\s*macht:)?",
 					"captures": {
 						"1": {
 							"name": "variable.name.ddp"
@@ -122,10 +137,37 @@
 						"3": {
 							"name": "support.type.ddp"
 						},
-						"5": {
+						"4": {
 							"name": "support.type.ddp"
 						},
-						"9": {
+						"5": {
+							"name": "keyword.control.ddp"
+						}
+					}
+				},
+				{
+					"name": "keyword.other.ddp",
+					"match": "Die Funktion (\\w+) mit den Parametern (\\w+(?:,\\s*\\w+)* (und) \\w+) vom Typ (\\w+(?:,\\s*\\w+)* (und) \\w+),\\s*gibt (nichts|einen? \\w+) zurück,(\\s*macht:)?",
+					"captures": {
+						"1": {
+							"name": "variable.name.ddp"
+						},
+						"2": {
+							"name": "variable.name.ddp"
+						},
+						"3": {
+							"name": "keyword.ddp"
+						},
+						"4": {
+							"name": "support.type.ddp"
+						},
+						"5": {
+							"name": "keyword.ddp"
+						},
+						"6": {
+							"name": "support.type.ddp"
+						},
+						"7": {
 							"name": "keyword.control.ddp"
 						}
 					}
