@@ -67,31 +67,31 @@ export function activate(ctx: vscode.ExtensionContext) {
 		let filePath = currentFile.replace(new RegExp('\\' + path.sep, 'g'), '/');
 
 		let gccFlags = "", externGccFlags = "";
-		if (config.has("run.gccFlags")) {
-			let flags = config.get<string>("run.gccFlags");
+		if (config.has("run.gccOptionen")) {
+			let flags = config.get<string>("run.gccOptionen");
 			if (flags !== undefined) {
 				gccFlags = flags;
 			}
 		}
-		if (config.has("run.externGccFlags")) {
-			let flags = config.get<string>("run.externGccFlags");
+		if (config.has("run.externeGccOptionen")) {
+			let flags = config.get<string>("run.externeGccOptionen");
 			if (flags !== undefined) {
 				externGccFlags = flags;
 			}
 		}
 
-		let command = exe + ' run ' + filePath;
+		let command = exe + ' starte ' + filePath;
 		if (gccFlags !== "") {
-			command = command + ' --gcc_flags="' + gccFlags + '"';
+			command = command + ' --gcc_optionen="' + gccFlags + '"';
 		}
 		if (externGccFlags !== "") {
-			command = command + ' --extern_gcc_flags="' + externGccFlags + '"';
+			command = command + ' --externe_gcc_optionen="' + externGccFlags + '"';
 		}
 
-		if (config.has("run.verbose")) {
-			let verbose = config.get<boolean>("run.verbose");
+		if (config.has("run.wortreich")) {
+			let verbose = config.get<boolean>("run.wortreich");
 			if (verbose !== undefined && verbose) {
-				command += ' --verbose';
+				command += ' --wortreich';
 			}
 		}
 

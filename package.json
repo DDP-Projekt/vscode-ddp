@@ -57,7 +57,7 @@
 			{
 				"command": "ddp.run.file",
 				"title": "DDP: Run the current file",
-				"description": "Runs the currently open file using $kddp run",
+				"description": "Runs the currently open file using $kddp starte",
 				"icon": "$(run)"
 			}
 		],
@@ -69,20 +69,20 @@
 					"default": "",
 					"description": "overrides the environment variable DDPPATH locally"
 				},
-				"ddp.run.gccFlags": {
+				"ddp.run.gccOptionen": {
 					"type": "string",
 					"default": "",
-					"description": "gcc_flags that are passed to $kddp run as --gcc_flags"
+					"description": "gcc_optionen that are passed to $kddp starte as --gcc_optionen"
 				},
-				"ddp.run.externGccFlags": {
+				"ddp.run.externeGccOptionen": {
 					"type": "string",
 					"default": "",
-					"description": "extern_gcc_flags that are passed to $kddp run as --extern_gcc_flags"
+					"description": "externe_gcc_optionen that are passed to $kddp starte as --externe_gcc_optionen"
 				},
-				"ddp.run.verbose": {
+				"ddp.run.wortreich": {
 					"type": "boolean",
 					"default": false,
-					"description": "adds the --verbose flag to $kddp run"
+					"description": "adds the --wortreich flag to $kddp starte"
 				}
 			}
 		},
