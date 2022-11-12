@@ -40,7 +40,7 @@
 			"patterns": [
 				{
 					"name": "keyword.control.ddp",
-					"match": "\\b(([Ww]enn)|(dann)|([Ss]onst)|(aber)|([Ff](ü|(ue))r)|(jede[n]?)|(in)|([Ss]olange)|([Mm]ache)|(zur(ü|(ue))ck)|([Gg]ib)|([Vv]erlasse die Funktion)|(von)|(vom)|(bis)|(jede)|(jeder)|(Schrittgr(ö|(oe))(ß|(ss))e))|(Mache)|(Mal)\\b"
+					"match": "\\b(([Ww]enn)|(dann)|([Ss]onst)|(aber)|([Ff](ü|(ue))r)|(jede[n]?)|(in)|([Ss]olange)|([Mm]ache)|(zur(ü|(ue))ck)|([Gg]ib)|([Vv]erlasse die Funktion)|(von)|(vom)|(bis)|(jede)|(jeder)|(Schrittgr(ö|(oe))(ß|(ss))e))|(Mal)|([Ww]iederhole)\\b"
 				},
 				{
 					"name": "meta.preprocessor",

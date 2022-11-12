@@ -77,9 +77,9 @@
 	},
 	"Repeat": {
 		"scope": "ddp",
-		"prefix": "Mache",
+		"prefix": "Wiederhole",
 		"body": [
-			"Mache:",
+			"Wiederhole:",
 			"\t$BLOCK_COMMENT_START Wiederholungs Körper $BLOCK_COMMENT_END",
 			"${1:Anzahl} Mal."
 		],
