@@ -86,12 +86,24 @@
 				{
 					"name": "string.quoted.double.ddp",
 					"begin": "\"",
-					"end": "\""
+					"end": "\"",
+					"patterns": [
+						{
+							"name": "constant.character.escape.ddp",
+							"match": "\\\\[\"\\\\abrtn]"
+						}
+					]
 				},
 				{
 					"name": "string.quoted.single.ddp",
 					"begin": "'",
-					"end": "'"
+					"end": "'",
+					"patterns": [
+						{
+							"name": "constant.character.escape.ddp",
+							"match": "\\\\['\\\\abrtn]"
+						}
+					]
 				},
 				{
 					"name": "constant.language.boolean.ddp",
