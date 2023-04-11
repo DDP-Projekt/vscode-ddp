@@ -53,7 +53,7 @@
 				},
 				{
 					"name": "keyword.ddp",
-					"match": "\\b([Dd]er)|([Dd]ie)|([Dd]as)|(de[mn])|(ist)|(an)|(Stelle)|([Ss]peichere das Ergebnis von)|([Ss]peichere)|(einer)|(eine)|(leere[n]?)|(Liste)|(aus)|(besteht)\\b"
+					"match": "\\b([Dd]er)|([Dd]ie)|([Dd]as)|(de[mn])|(ist)|(an)|(Stelle)|([Ss]peichere das Ergebnis von)|([Ss]peichere)|(einer)|(eine)|(leere[n]?)|(Liste)|(aus)|(besteht)|((ö|(oe))ffentlich)\\b"
 				}
 			]
 		},
@@ -111,7 +111,7 @@
 			"patterns": [
 				{
 					"name": "keyword.other.ddp",
-					"match": "Die Funktion ([\\wäöüÄÖÜ]+) gibt (nichts|einen? [\\wäöüÄÖÜ]+) zurück,(\\s*macht:)?",
+					"match": "Die ((ö|(oe)ffentliche)* Funktion ([\\wäöüÄÖÜ]+) gibt (nichts|einen? [\\wäöüÄÖÜ]+) zurück,(\\s*macht:)?",
 					"captures": {
 						"1": {
 							"name": "variable.name.ddp"
