@@ -52,7 +52,7 @@
 					}
 				},
 				{
-					"name": "keyword.ddp",
+					"name": "keyword.other.ddp",
 					"match": "\\b([Dd]er)|([Dd]ie)|([Dd]as)|(de[mn])|(ist)|(an)|(Stelle)|([Ss]peichere das Ergebnis von)|([Ss]peichere)|(einer)|(eine)|(leere[n]?)|(Liste)|(aus)|(besteht)|((ö|(oe))ffentlich)\\b"
 				}
 			]
@@ -86,12 +86,24 @@
 				{
 					"name": "string.quoted.double.ddp",
 					"begin": "\"",
-					"end": "\""
+					"end": "\"",
+					"patterns": [
+						{
+							"name": "constant.character.escape.ddp",
+							"match": "\\\\[\"\\\\abrtn]"
+						}
+					]
 				},
 				{
 					"name": "string.quoted.single.ddp",
 					"begin": "'",
-					"end": "'"
+					"end": "'",
+					"patterns": [
+						{
+							"name": "constant.character.escape.ddp",
+							"match": "\\\\['\\\\abrtn]"
+						}
+					]
 				},
 				{
 					"name": "constant.language.boolean.ddp",
@@ -102,7 +114,7 @@
 					"match": "-?(\\d+,?\\d*)"
 				},
 				{
-					"name": "constant.numeric.ddp",
+					"name": "constant.language.numeric.ddp",
 					"match": "\\b((pi)|(e)|(tau)|(phi))\\b"
 				}
 			]
@@ -110,11 +122,14 @@
 		"function": {
 			"patterns": [
 				{
-					"name": "keyword.other.ddp",
+					"name": "meta.function.ddp",
 					"match": "Die ((ö|(oe)ffentliche)* Funktion ([\\wäöüÄÖÜ]+) gibt (nichts|einen? [\\wäöüÄÖÜ]+) zurück,(\\s*macht:)?",
 					"captures": {
+						"0": {
+							"name": "keyword.other.ddp"
+						},
 						"1": {
-							"name": "variable.name.ddp"
+							"name": "entity.name.function.ddp"
 						},
 						"2": {
 							"name": "support.type.ddp"
@@ -125,14 +140,17 @@
 					}
 				},
 				{
-					"name": "keyword.other.ddp",
+					"name": "meta.function.ddp",
 					"match": "Die Funktion ([\\wäöüÄÖÜ]+) mit dem Parameter ([\\wäöüÄÖÜ]+) vom Typ ([\\w\\säöüÄÖÜ]+),\\s*gibt (nichts|einen? [\\w\\säöüÄÖÜ]+) zurück,(\\s*macht:)?",
 					"captures": {
+						"0": {
+							"name": "keyword.other.ddp"
+						},
 						"1": {
-							"name": "variable.name.ddp"
+							"name": "entity.name.function.ddp"
 						},
 						"2": {
-							"name": "variable.name.ddp"
+							"name": "variable.parameter.ddp"
 						},
 						"3": {
 							"name": "support.type.ddp"
@@ -146,23 +164,26 @@
 					}
 				},
 				{
-					"name": "keyword.other.ddp",
-					"match": "Die Funktion ([\\wäöüÄÖÜ]+) mit den Parametern (\\w+(?:,\\s*[\\wäöüÄÖÜ]+)* (und) [\\wäöüÄÖÜ]+) vom Typ ([\\w\\säöüÄÖÜ]+(?:,\\s*[\\w\\säöüÄÖÜ]+)* (und) [\\w\\säöüÄÖÜ]+),\\s*gibt (nichts|einen? [\\w\\säöüÄÖÜ]+) zurück,(\\s*macht:)?",
+					"name": "meta.function.ddp",
+					"match": "Die Funktion ([\\wäöüÄÖÜ]+) mit den Parametern (\\w+(?:,\\s*[\\wäöüÄÖÜ]+)*) und ([\\wäöüÄÖÜ]+) vom Typ ([\\w\\säöüÄÖÜ]+(?:,\\s*[\\w\\säöüÄÖÜ]+)*) und ([\\w\\säöüÄÖÜ]+),\\s*gibt (nichts|einen? [\\w\\säöüÄÖÜ]+) zurück,(\\s*macht:)?",
 					"captures": {
+						"0": {
+							"name": "keyword.other.ddp"
+						},
 						"1": {
-							"name": "variable.name.ddp"
+							"name": "entity.name.function.ddp"
 						},
 						"2": {
-							"name": "variable.name.ddp"
+							"name": "variable.parameter.ddp"
 						},
 						"3": {
-							"name": "keyword.ddp"
+							"name": "variable.parameter.ddp"
 						},
 						"4": {
 							"name": "support.type.ddp"
 						},
 						"5": {
-							"name": "keyword.ddp"
+							"name": "support.type.ddp"
 						},
 						"6": {
 							"name": "support.type.ddp"
@@ -186,7 +207,7 @@
 					"match": "[Uu]nd kann so benutzt werden:"
 				},
 				{
-					"name": "keyword.ddp",
+					"name": "entity.name.function.ddp",
 					"match": "Der (Alias) (\"[\\s\\S]+\") steht für die Funktion ([\\wäöüÄÖÜ]+)",
 					"captures": {
 						"1": {
