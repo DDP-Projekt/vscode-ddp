@@ -123,7 +123,7 @@
 			"patterns": [
 				{
 					"name": "meta.function.ddp",
-					"match": "Die ((ö|(oe)ffentliche)? Funktion ([\\wäöüÄÖÜ]+) gibt (nichts|einen? [\\wäöüÄÖÜ]+) zurück,(\\s*macht:)?",
+					"match": "Die ((ö|(oe))ffentliche)? Funktion ([\\wäöüÄÖÜ]+) gibt (nichts|einen? [\\wäöüÄÖÜ]+) zurück,(\\s*macht:)?",
 					"captures": {
 						"0": {
 							"name": "keyword.other.ddp"
