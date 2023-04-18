@@ -44,7 +44,7 @@
 				},
 				{
 					"name": "meta.preprocessor",
-					"match": "Binde (\"[\\s\\S]+\") ein",
+					"match": "Binde (\"[\\s\\S]*\") ein",
 					"captures": {
 						"1": {
 							"name": "meta.preprocessor.string"
