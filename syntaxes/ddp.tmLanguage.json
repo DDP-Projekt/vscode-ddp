@@ -112,10 +112,6 @@
 				{
 					"name": "constant.numeric.ddp",
 					"match": "-?(\\d+,?\\d*)"
-				},
-				{
-					"name": "constant.language.numeric.ddp",
-					"match": "\\b((pi)|(e)|(tau)|(phi))\\b"
 				}
 			]
 		},
