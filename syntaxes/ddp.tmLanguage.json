@@ -53,7 +53,7 @@
 				},
 				{
 					"name": "keyword.other.ddp",
-					"match": "\\b([Dd]er)|([Dd]ie)|([Dd]as)|(de[mn])|(ist)|(an)|(Stelle)|([Ss]peichere das Ergebnis von)|([Ss]peichere)|(einer)|(eine)|(leere[n]?)|(Liste)|(aus)|(besteht)|((ö|(oe))ffentlich)\\b"
+					"match": "\\b([Dd]er)|([Dd]ie)|([Dd]as)|(de[mn])|(ist)|(an)|(Stelle)|([Ss]peichere das Ergebnis von)|([Ss]peichere)|(einer)|(eine)|(leere[n]?)|(Liste)|(aus)|(besteht)|((ö|(oe))ffentliche)\\b"
 				}
 			]
 		},
@@ -123,7 +123,7 @@
 			"patterns": [
 				{
 					"name": "meta.function.ddp",
-					"match": "Die ((ö|(oe))ffentliche)? Funktion ([\\wäöüÄÖÜ]+) gibt (nichts|einen? [\\wäöüÄÖÜ]+) zurück,(\\s*macht:)?",
+					"match": "Die( (ö|(oe))ffentliche)? Funktion ([\\wäöüÄÖÜ]+) gibt (nichts|einen? [\\wäöüÄÖÜ]+) zurück,(\\s*macht:)?",
 					"captures": {
 						"0": {
 							"name": "keyword.other.ddp"
