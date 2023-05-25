@@ -173,7 +173,7 @@
 							"name": "keyword.other.ddp"
 						},
 						"1": {
-							"name": "keyword.other.ddp"
+							"name": "keyword.control.ddp"
 						},
 						"4": {
 							"name": "entity.name.function.ddp"
@@ -200,7 +200,7 @@
 							"name": "keyword.other.ddp"
 						},
 						"1": {
-							"name": "keyword.other.ddp"
+							"name": "keyword.control.ddp"
 						},
 						"4": {
 							"name": "entity.name.function.ddp"
