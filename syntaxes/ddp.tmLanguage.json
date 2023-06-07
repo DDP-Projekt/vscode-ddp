@@ -230,13 +230,28 @@
 					"match": "ist\\s+in\\s+(\"[\\s\\S]+\")\\s+definiert",
 					"captures": {
 						"1": {
-							"name": "meta.preprocessor.string"
+							"name": "meta.preprocessor.string.ddp"
 						}
 					}
 				},
 				{
-					"name": "keyword.control.ddp",
-					"match": "[Uu]nd\\s+kann\\s+so\\s+benutzt\\s+werden:"
+					"name": "keyword.control.alias.ddp",
+					"match": "([Uu]nd\\s+kann\\s+so\\s+benutzt\\s+werden)"
+				},
+				{
+					"begin": "(?<=werden):",
+					"end": "\"\n",
+					"name": "meta.preprocessor.string.ddp",
+					"patterns": [
+						{
+							"match": "<[\\wäöüÄÖÜ]+>",
+							"name": "variable.parameter.alias.ddp"
+						},
+						{
+							"match": "oder|,",
+							"name": "keyword.other.alias.ddp"
+						}
+					]
 				},
 				{
 					"name": "entity.name.function.ddp",
@@ -246,7 +261,13 @@
 							"name": "support.type.ddp"
 						},
 						"2": {
-							"name": "meta.preprocessor.string"
+							"name": "meta.preprocessor.string.ddp",
+							"patterns": [
+								{
+									"name": "variable.parameter.alias.ddp",
+									"match": "<[\\wäöüÄÖÜ]+>"
+								}
+							]
 						},
 						"3": {
 							"name": "variable.name.ddp"
