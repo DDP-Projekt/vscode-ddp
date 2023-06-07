@@ -9,7 +9,9 @@
 |||
 
 ## Installation
+Vorraussetzungen: Den Sprachserver [DDP-LS](https://github.com/DDP-Projekt/DDPLS) installiert haben.
+
 1. Klonen Sie dieses Repo in den Ordner
 * `/home/leon/.vscode/extensions` auf Linux
 * ToDo auf Windows
-2. Starten Sie VSCode neu.
+3. Starten Sie VSCode neu.
