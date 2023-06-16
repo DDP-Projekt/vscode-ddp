@@ -1,52 +1,4 @@
 {
-	"Write string": {
-		"scope": "ddp",
-		"prefix": "Schreibe Text",
-		"body": [
-			"Schreibe den Text \"${1:Text hier}\"."
-		],
-		"description": "Schreibe Text"
-	},
-	"Write int": {
-		"scope": "ddp",
-		"prefix": "Schreibe Zahl",
-		"body": [
-			"Schreibe die Zahl ${1:$BLOCK_COMMENT_START Zahl $BLOCK_COMMENT_END}."
-		],
-		"description": "Schreibe Zahl"
-	},
-	"Write float": {
-		"scope": "ddp",
-		"prefix": "Schreibe Kommazahl",
-		"body": [
-			"Schreibe die Kommazahl ${1:$BLOCK_COMMENT_START Kommazahl $BLOCK_COMMENT_END}."
-		],
-		"description": "Schreibe Kommazahl"
-	},
-	"Write bool": {
-		"scope": "ddp",
-		"prefix": "Schreibe Boolean",
-		"body": [
-			"Schreibe den Boolean ${1:$BLOCK_COMMENT_START Boolean Ausdruck $BLOCK_COMMENT_END}."
-		],
-		"description": "Schreibe Boolean"
-	},
-	"Write char": {
-		"scope": "ddp",
-		"prefix": "Schreibe Buchstabe",
-		"body": [
-			"Schreibe den Buchstaben '${1:Zeichen}'."
-		],
-		"description": "Schreibe Buchstabe"
-	},
-	"Write": {
-		"scope": "ddp",
-		"prefix": "Schreibe",
-		"body": [
-			"Schreibe ${1:Wert}."
-		],
-		"description": "Schreibe Wert"
-	},
 	"For Loop": {
 		"scope": "ddp",
 		"prefix": "Für",
@@ -130,7 +82,7 @@
 		],
 		"description": "Duden Einbindung"
 	},
-	"Funct-NoPram": {
+	"Function-NoParam": {
 		"scope": "ddp",
 		"prefix": [
 			"Die Funktion",
