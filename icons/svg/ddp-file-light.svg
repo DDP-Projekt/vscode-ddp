@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 24 24"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="ddp-file-light.svg"
+   inkscape:version="1.3 (0e150ed, 2023-07-21)"
+   inkscape:export-filename="ddp-file-light.png"
+   inkscape:export-xdpi="512"
+   inkscape:export-ydpi="512"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="8.5731699"
+     inkscape:cx="8.2816509"
+     inkscape:cy="8.1066864"
+     inkscape:window-width="1128"
+     inkscape:window-height="694"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg1" />
+  <path
+     id="path17"
+     style="fill:#a9a9a9;fill-opacity:1"
+     d="M 6 2 C 4.8954316 2 4 2.8954316 4 4 L 4 20 C 4 21.104568 4.8954316 22 6 22 L 18 22 C 19.104568 22 20 21.104568 20 20 L 20 8 L 14 2 L 6 2 z " />
+  <rect
+     style="fill:#002b36;fill-opacity:1;stroke:none;stroke-width:0;stroke-dasharray:none"
+     id="rect1"
+     width="8"
+     height="2"
+     x="8"
+     y="11"
+     rx="0"
+     ry="0" />
+  <rect
+     style="fill:#cc0000;stroke:none;stroke-width:1.71827;stroke-dasharray:none;fill-opacity:1"
+     id="rect1-6"
+     width="8"
+     height="2"
+     x="8"
+     y="14.003265"
+     rx="0"
+     ry="0" />
+  <rect
+     style="fill:#ffc400;stroke:none;stroke-width:1.718;stroke-dasharray:none;fill-opacity:1"
+     id="rect2"
+     width="8"
+     height="2"
+     x="8"
+     y="17"
+     rx="0"
+     ry="0" />
+  <path
+     d="m 13,4 v 5 h 5 z"
+     style="fill:#fffeff;fill-opacity:1"
+     id="path1"
+     transform="translate(-1,-1)" />
+</svg>

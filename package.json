@@ -3,7 +3,7 @@
 	"displayName": "DDP",
 	"description": "Language Support for DDP",
 	"version": "0.0.1",
-	"icon": "./icons/icon.png",
+	"icon": "./icons/ddp-logo.png",
 	"author": {
 		"name": "bafto and NotLe0n",
 		"url": "https://github.com/DDP-Projekt"
@@ -34,8 +34,8 @@
 				],
 				"configuration": "./language-configuration.json",
 				"icon": {
-					"light": "./icons/icon.png",
-					"dark": "./icons/icon.png"
+					"light": "./icons/ddp-file-light.png",
+					"dark": "./icons/ddp-file-dark.png"
 				}
 			}
 		],
