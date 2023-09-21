@@ -17,10 +17,12 @@ export function activate(ctx: vscode.ExtensionContext) {
 		out.appendLine("DDPPATH not found\nThis might cause errors in some commands");
 	}
 
+	let config = vscode.workspace.getConfiguration('ddp');
+	let lsArgs = config.get<string[]>("DDPLS.flags");
 	// DDPLS must be installed and in the PATH
 	let serverOptions: langsrv.ServerOptions = {
-		run: { command: "DDPLS" },
-		debug: { command: "DDPLS" }
+		run: { command: "DDPLS", args: lsArgs },
+		debug: { command: "DDPLS", args: lsArgs }
 	};
 
 	let clientOptions: langsrv.LanguageClientOptions = {

@@ -87,6 +87,11 @@
 					"type": "boolean",
 					"default": false,
 					"description": "adds the --wortreich flag to $kddp starte"
+				},
+				"ddp.DDPLS.flags": {
+					"type": "array",
+					"default": "",
+					"description": "flags that are passed to the language server"
 				}
 			}
 		},
