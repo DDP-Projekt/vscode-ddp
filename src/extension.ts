@@ -68,32 +68,12 @@ export function activate(ctx: vscode.ExtensionContext) {
 		let exe = path.join(DDPPATH, 'bin', os.platform() === 'win32' ? 'kddp.exe' : 'kddp').replace(new RegExp('\\' + path.sep, 'g'), '/');
 		let filePath = currentFile.replace(new RegExp('\\' + path.sep, 'g'), '/');
 
-		let gccFlags = "", externGccFlags = "";
-		if (config.has("run.gccOptionen")) {
-			let flags = config.get<string>("run.gccOptionen");
-			if (flags !== undefined) {
-				gccFlags = flags;
-			}
-		}
-		if (config.has("run.externeGccOptionen")) {
-			let flags = config.get<string>("run.externeGccOptionen");
-			if (flags !== undefined) {
-				externGccFlags = flags;
-			}
-		}
-
 		let command = exe + ' starte ' + filePath;
-		if (gccFlags !== "") {
-			command = command + ' --gcc_optionen="' + gccFlags + '"';
-		}
-		if (externGccFlags !== "") {
-			command = command + ' --externe_gcc_optionen="' + externGccFlags + '"';
-		}
 
-		if (config.has("run.wortreich")) {
-			let verbose = config.get<boolean>("run.wortreich");
-			if (verbose !== undefined && verbose) {
-				command += ' --wortreich';
+		if (config.has("run.args")) {
+			let args = config.get<string[]>("run.args");
+			if (args !== undefined) {
+				command += ' ' + args.join(' ');
 			}
 		}
 

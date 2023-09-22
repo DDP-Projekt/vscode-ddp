@@ -73,24 +73,14 @@
 					"default": "",
 					"description": "overrides the environment variable DDPPATH locally"
 				},
-				"ddp.run.gccOptionen": {
-					"type": "string",
-					"default": "",
-					"description": "gcc_optionen that are passed to $kddp starte as --gcc_optionen"
-				},
-				"ddp.run.externeGccOptionen": {
-					"type": "string",
-					"default": "",
-					"description": "externe_gcc_optionen that are passed to $kddp starte as --externe_gcc_optionen"
-				},
-				"ddp.run.wortreich": {
-					"type": "boolean",
-					"default": false,
-					"description": "adds the --wortreich flag to $kddp starte"
+				"ddp.run.args": {
+					"type": "array",
+					"default": [],
+					"description": "arguments that are passed to $kddp starte"
 				},
 				"ddp.DDPLS.flags": {
 					"type": "array",
-					"default": "",
+					"default": [],
 					"description": "flags that are passed to the language server"
 				}
 			}
