@@ -2,7 +2,7 @@
 	"name": "vscode-ddp",
 	"displayName": "DDP",
 	"description": "Language Support for DDP",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"icon": "./icons/ddp-logo.png",
 	"author": {
 		"name": "bafto and NotLe0n",
