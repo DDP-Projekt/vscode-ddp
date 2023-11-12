@@ -9,9 +9,14 @@
 |||
 
 ## Installation
-Vorraussetzungen: Den Sprachserver [DDP-LS](https://github.com/DDP-Projekt/DDPLS) installiert haben.
+Für alle features außer Schlüsselwort highlighting muss man den Sprachserver [DDP-LS](https://github.com/DDP-Projekt/DDPLS) installiert haben!
 
-1. Klonen Sie dieses Repo in den Ordner
-* `/home/leon/.vscode/extensions` auf Linux
-* ToDo auf Windows
-3. Starten Sie VSCode neu.
+### Release version
+Im Erweiterungen Menü in vscode nach DDP suchen und installieren oder über diesen link: https://marketplace.visualstudio.com/items?itemName=DDP-Projekt.vscode-ddp
+
+### Developer version
+1. Klonen Sie dieses Repo in den Ordner\
+   `%USERPROFILE%\.vscode\extensions` auf Windows\
+   `~/.vscode/extensions` auf MacOS\
+   `~/.vscode/extensions` auf Linux
+2. VSCode neustarten.
