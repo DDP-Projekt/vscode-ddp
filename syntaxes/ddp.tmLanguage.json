@@ -80,7 +80,7 @@
 				},
 				{
 					"name": "keyword.other.ddp",
-					"match": "\\b([Dd]er)|([Dd]ie)|([Dd]as)|(de[mn])|(ist)|(an)|(Stelle)|([Ss]peichere das Ergebnis von)|([Ss]peichere)|(einer)|(eine)|(leere[n]?)|(Liste)|(aus)|(besteht)|(Funktion)|(mit)|(Parameter[n]?)|(Typ)\\b"
+					"match": "\\b([Dd]er)|([Dd]ie)|([Dd]as)|(de[mn])|(ist)|(an)|(Stelle)|([Ss]peichere das Ergebnis von)|([Ss]peichere)|(einer)|(eine)|(leere[n]?)|(Liste)|(aus)|(besteht)|(Funktion)|(mit)|(Parameter[n]?)|(Typ)|(Standardwert)\\b"
 				}
 			]
 		},
@@ -273,6 +273,29 @@
 							"name": "variable.name.ddp"
 						}
 					}
+				},
+				{
+					"name": "keyword.struct.ddp",
+					"match": "Wir nennen die Kombination aus"
+				},
+				{
+					"name": "keyword.control.alias.ddp",
+					"match": "(,?[Uu]nd\\s+erstellen\\s+sie\\s+so)"
+				},
+				{
+					"begin": "(?<=so):",
+					"end": "\"\n",
+					"name": "meta.preprocessor.string.ddp",
+					"patterns": [
+						{
+							"match": "<[\\wäöüÄÖÜ]+>",
+							"name": "variable.parameter.alias.ddp"
+						},
+						{
+							"match": "oder|,",
+							"name": "keyword.other.alias.ddp"
+						}
+					]
 				}
 			]
 		}
