@@ -144,6 +144,30 @@
 		],
 		"description": "Alias definition"
 	},
+	"Struct-Decl": {
+		"scope": "ddp",
+		"prefix": [
+			"Wir",
+			"Wir nennen",
+			"Struktur",
+			"struct"
+		],
+		"body": [
+			"Wir nennen die Kombination aus",
+			"\t${1|der,dem|} ${2:Typname} ${3:Name} mit Standardwert ${4:Wert},",
+			"${5|ein,eine,einen|} ${6:Typname},",
+			"und erstellen sie so:",
+			"\t\"${7:Alias <x>}\""
+		]
+	},
+	"Struct-Alias": {
+		"scope": "ddp",
+		"prefix": "Und erstellen",
+		"body": [
+			"und erstellen sie so:",
+			"\t\"${1:Alias}\""
+		]
+	},
 	"Alias-Decl": {
 		"scope": "ddp",
 		"prefix": [
@@ -165,11 +189,11 @@
 	},
 	"var-bool": {
 		"scope": "ddp",
-		"prefix": "Variable Boolean",
+		"prefix": "Variable Wahrheitswert",
 		"body": [
-			"Der Boolean ${1:Name} ist ${2|wahr,falsch|} wenn ${3:Ausdruck} ist."
+			"Der Wahrheitswert ${1:Name} ist ${2|wahr,falsch|} wenn ${3:Ausdruck} ist."
 		],
-		"description": "Variablen deklaration eines Booleans"
+		"description": "Variablen deklaration eines Wahrheitswertes"
 	},
 	"mutate": {
 		"scope": "ddp",
