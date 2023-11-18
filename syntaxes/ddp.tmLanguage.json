@@ -80,7 +80,7 @@
 				},
 				{
 					"name": "keyword.other.ddp",
-					"match": "\\b([Dd]er)|([Dd]ie)|([Dd]as)|(de[mn])|(ist)|(an)|(Stelle)|([Ss]peichere das Ergebnis von)|([Ss]peichere)|(einer)|(eine)|(leere[n]?)|(Liste)|(aus)|(besteht)|(Funktion)|(mit)|(Parameter[n]?)|(Typ)|(Standardwert)\\b"
+					"match": "\\b([Dd]er)|([Dd]ie)|([Dd]as)|(de[mn])|(ist)|(an)|(Stelle)|([Ss]peichere das Ergebnis von)|([Ss]peichere)|(eine[rn])|(eine)|(ein)|(leere[n]?)|(Liste)|(aus)|(besteht)|(Funktion)|(mit)|(Parameter[n]?)|(Typ)|(Standardwert)\\b"
 				}
 			]
 		},
@@ -104,7 +104,7 @@
 			"patterns": [
 				{
 					"name": "variable.name.ddp",
-					"match": "[\\wäöüÄÖÜ]+"
+					"match": "[A-Za-zäöüÄÖÜß][\\wäöüÄÖÜß]*"
 				}
 			]
 		},
