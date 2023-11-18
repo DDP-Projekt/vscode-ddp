@@ -189,11 +189,11 @@
 	},
 	"var-bool": {
 		"scope": "ddp",
-		"prefix": "Variable Boolean",
+		"prefix": "Variable Wahrheitswert",
 		"body": [
-			"Der Boolean ${1:Name} ist ${2|wahr,falsch|} wenn ${3:Ausdruck} ist."
+			"Der Wahrheitswert ${1:Name} ist ${2|wahr,falsch|} wenn ${3:Ausdruck} ist."
 		],
-		"description": "Variablen deklaration eines Booleans"
+		"description": "Variablen deklaration eines Wahrheitswertes"
 	},
 	"mutate": {
 		"scope": "ddp",
