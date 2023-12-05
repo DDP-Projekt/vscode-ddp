@@ -21,14 +21,19 @@ export function activate(ctx: vscode.ExtensionContext) {
 	let config = vscode.workspace.getConfiguration('ddp');
 
 	let commandName = "DDPLS";
-	if (config.has("DDPLS.path")) {
-		let ddplsPath = config.get<string>("DDPLS.path");
-		if (ddplsPath !== "" && ddplsPath !== undefined) {
+	{
+		let ddplsPath = ctx.asAbsolutePath(path.join('bin', os.platform() === 'win32' ? 'DDPLS.exe' : 'DDPLS'));
+		out.appendLine("bundled ddplsPath: " + ddplsPath);
+		if (fs.existsSync(ddplsPath)) {
+			out.appendLine("using bundled DDPLS");
+			out.appendLine(ddplsPath);
 			commandName = ddplsPath;
 		}
-	} else {
-		let ddplsPath = ctx.asAbsolutePath(path.join('bin', os.platform() === 'win32' ? 'DDPLS.exe' : 'DDPLS'));
-		if (fs.existsSync(ddplsPath)) {
+	}
+	{
+		let ddplsPath = config.get<string>("DDPLS.path");
+		if (ddplsPath !== "" && ddplsPath !== undefined) {
+			out.appendLine("using custom DDPLS path");
 			commandName = ddplsPath;
 		}
 	}
