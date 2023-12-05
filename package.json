@@ -78,6 +78,11 @@
 					"default": [],
 					"description": "arguments that are passed to $kddp starte"
 				},
+				"ddp.DDPLS.path": {
+					"type": "string",
+					"default": "",
+					"description": "if present this DDPLS binary is used instead of the one shipped with the extension or the global one"
+				},
 				"ddp.DDPLS.flags": {
 					"type": "array",
 					"default": [],
