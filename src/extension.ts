@@ -4,6 +4,7 @@ import * as vscode from 'vscode';
 import * as langsrv from 'vscode-languageclient/node';
 import * as path from 'path';
 import * as os from 'os';
+import * as fs from 'fs';
 
 let DDPPATH = process.env.DDPPATH;
 
@@ -18,11 +19,25 @@ export function activate(ctx: vscode.ExtensionContext) {
 	}
 
 	let config = vscode.workspace.getConfiguration('ddp');
+
+	let commandName = "DDPLS";
+	if (config.has("DDPLS.path")) {
+		let ddplsPath = config.get<string>("DDPLS.path");
+		if (ddplsPath !== "" && ddplsPath !== undefined) {
+			commandName = ddplsPath;
+		}
+	} else {
+		let ddplsPath = ctx.asAbsolutePath(path.join('bin', os.platform() === 'win32' ? 'DDPLS.exe' : 'DDPLS'));
+		if (fs.existsSync(ddplsPath)) {
+			commandName = ddplsPath;
+		}
+	}
+
 	let lsArgs = config.get<string[]>("DDPLS.flags");
 	// DDPLS must be installed and in the PATH
 	let serverOptions: langsrv.ServerOptions = {
-		run: { command: "DDPLS", args: lsArgs },
-		debug: { command: "DDPLS", args: lsArgs }
+		run: { command: commandName, args: lsArgs },
+		debug: { command: commandName, args: lsArgs }
 	};
 
 	let clientOptions: langsrv.LanguageClientOptions = {
@@ -54,15 +69,12 @@ export function activate(ctx: vscode.ExtensionContext) {
 			return;
 		}
 
-		let config = vscode.workspace.getConfiguration('ddp');
+		let DDPPATH = "";
 		if (config.has("DDPPATH")) {
-			let ddppath = config.get("DDPPATH");
-			if (ddppath !== "") {
-				DDPPATH = config.get("DDPPATH");
+			let ddppath = config.get<string>("DDPPATH");
+			if (ddppath !== "" && ddppath !== undefined) {
+				DDPPATH = ddppath;
 			}
-		}
-		if (DDPPATH === undefined) {
-			DDPPATH = "";
 		}
 
 		let exe = path.join(DDPPATH, 'bin', os.platform() === 'win32' ? 'kddp.exe' : 'kddp').replace(new RegExp('\\' + path.sep, 'g'), '/');
