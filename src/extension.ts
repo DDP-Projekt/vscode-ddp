@@ -4,6 +4,7 @@ import * as vscode from 'vscode';
 import * as langsrv from 'vscode-languageclient/node';
 import * as path from 'path';
 import * as os from 'os';
+import * as fs from 'fs';
 
 let DDPPATH = process.env.DDPPATH;
 
@@ -17,12 +18,20 @@ export function activate(ctx: vscode.ExtensionContext) {
 		out.appendLine("DDPPATH not found\nThis might cause errors in some commands");
 	}
 
+	let commandName = "DDPLS";
+	{
+		let ddplsPath = ctx.asAbsolutePath(path.join('bin', os.platform() === 'win32' ? 'DDPLS.exe' : 'DDPLS'));
+		if (fs.existsSync(ddplsPath)) {
+			commandName = ddplsPath;
+		}
+	}
+
 	let config = vscode.workspace.getConfiguration('ddp');
 	let lsArgs = config.get<string[]>("DDPLS.flags");
 	// DDPLS must be installed and in the PATH
 	let serverOptions: langsrv.ServerOptions = {
-		run: { command: "DDPLS", args: lsArgs },
-		debug: { command: "DDPLS", args: lsArgs }
+		run: { command: commandName, args: lsArgs },
+		debug: { command: commandName, args: lsArgs }
 	};
 
 	let clientOptions: langsrv.LanguageClientOptions = {
