@@ -74,7 +74,7 @@ export function activate(ctx: vscode.ExtensionContext) {
 			return;
 		}
 
-		let DDPPATH = "";
+		let DDPPATH = process.env.DDPPATH === undefined ? "" : process.env.DDPPATH;
 		if (config.has("DDPPATH")) {
 			let ddppath = config.get<string>("DDPPATH");
 			if (ddppath !== "" && ddppath !== undefined) {
