@@ -44,34 +44,13 @@
 				},
 				{
 					"name": "meta.preprocessor",
-					"match": "Binde\\s+(\"[\\s\\S]*\")\\s+ein",
+					"match": "Binde\\s+(?:(?:(\\w+(?:,\\s*[\\wäöüÄÖÜ]+)*)\\s+und\\s+)?([\\wäöüÄÖÜ]+)\\s+aus\\s+)?(\"[\\s\\S]*?\")\\s+ein",
 					"captures": {
 						"1": {
-							"name": "meta.preprocessor.string"
-						}
-					}
-				},
-				{
-					"name": "meta.preprocessor",
-					"match": "Binde\\s+([\\wäöüÄÖÜ]+)\\s+aus\\s+(\"[\\s\\S]*\")\\s+ein",
-					"captures": {
-						"1": {
-							"name": "variable.name.ddp"
+							"name": "entity.name.function.ddp"
 						},
 						"2": {
-							"name": "meta.preprocessor.string"
-						}
-					}
-				},
-				{
-					"name": "meta.preprocessor",
-					"match": "Binde\\s+(\\w+(?:,\\s*[\\wäöüÄÖÜ]+)*)\\s+und\\s+([\\wäöüÄÖÜ]+)\\s+aus\\s+(\"[\\s\\S]*\")\\s+ein",
-					"captures": {
-						"1": {
-							"name": "variable.name.ddp"
-						},
-						"2": {
-							"name": "variable.name.ddp"
+							"name": "entity.name.function.ddp"
 						},
 						"3": {
 							"name": "meta.preprocessor.string"
