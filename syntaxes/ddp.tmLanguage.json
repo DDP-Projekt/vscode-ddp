@@ -40,11 +40,11 @@
 			"patterns": [
 				{
 					"name": "keyword.control.ddp",
-					"match": "\\b(([Ww]enn)|(dann)|([Ss]onst)|(aber)|([Ff](ü|(ue))r)|(jede[n]?)|(in)|([Ss]olange)|([Mm]ach(e|t))|(zur(ü|(ue))ck)|([Gg]ibt?)|([Vv]erlasse die ((Funktion)|(Schleife)))|([Ff]ahre mit der Schleife fort)|(von)|(vom)|(bis)|(jede)|(jeder)|(Schrittgr(ö|(oe))(ß|(ss))e))|(Mal)|([Ww]iederhole)|((ö|(oe))ffentliche(n)?)\\b"
+					"match": "\\b(([Ww]enn)|(dann)|([Ss]onst)|(aber)|([Ff](ü|ue)r)|(jeden?)|(in)|([Ss]olange)|([Mm]ach[et])|(zur(ü|ue)ck)|([Gg]ibt?)|([Vv]erlasse\\s+die\\s+((Funktion)|(Schleife)))|([Ff]ahre\\s+mit\\s+der\\s+Schleife\\s+fort)|(von)|(vom)|(bis)|(jede)|(jeder)|(Schrittgr(ö|(oe))(ß|ss)e))|(Mal)|([Ww]iederhole)|((ö|oe)ffentlichen?)\\b"
 				},
 				{
 					"name": "meta.preprocessor",
-					"match": "Binde\\s+(?:(?:(\\w+(?:,\\s*[\\wäöüÄÖÜ]+)*)\\s+und\\s+)?([\\wäöüÄÖÜ]+)\\s+aus\\s+)?(\"[\\s\\S]*?\")\\s+ein",
+					"match": "Binde\\s+(?:(?:(\\w+(?:,\\s*[\\wäöüÄÖÜß]+)*)\\s+und\\s+)?([\\wäöüÄÖÜß]+)\\s+aus\\s+)?(\"[\\s\\S]*?\")\\s+ein",
 					"captures": {
 						"1": {
 							"name": "entity.name.function.ddp"
@@ -59,7 +59,7 @@
 				},
 				{
 					"name": "keyword.other.ddp",
-					"match": "\\b([Dd]er)|([Dd]ie)|([Dd]as)|(de[mn])|(ist)|(an)|(Stelle)|([Ss]peichere das Ergebnis von)|([Ss]peichere)|(eine[rn])|(eine)|(ein)|(leere[n]?)|(Liste)|(aus)|(besteht)|(Funktion)|(mit)|(Parameter[n]?)|(Typ)|(Standardwert)\\b"
+					"match": "\\b([Dd]er)|([Dd]ie)|([Dd]as)|(de[mn])|(ist)|(an)|(Stelle)|([Ss]peichere\\s+das\\s+Ergebnis\\s+von)|([Ss]peichere)|(eine[rn])|(eine)|(ein)|(leeren?)|(Liste)|(aus)|(besteht)|(Funktion)|(mit)|(Parametern?)|(Typ)|(Standardwert)\\b"
 				}
 			]
 		},
@@ -67,7 +67,15 @@
 			"patterns": [
 				{
 					"name": "keyword.operator.new.ddp",
-					"match": "\\b((oder)|(und)|(nicht)|(plus)|(minus)|(mal)|(durch)|(modulo)|(hoch)|(Wurzel)|(logisch)|(kontra)|(gleich)|(ungleich)|(kleiner)|(größer)|(groesser)|(als)|(Logarithmus)|(Betrag)|(Länge)|(Laenge)|(Größe)|(Groesse)|(um)|(Bit)|(verschoben)|(nach)|(links)|(rechts)|(zur)|(Basis)|(verkettet mit)|([Vv]erringere)|([Ee]rhöhe)|([Ee]rhoehe)|([Tt]eile)|([Vv]ervielfache)|([Ss]ubtrahiere)|([Aa]ddiere)|([Mm]ultipliziere)|([Dd]ividiere)|([Nn]egiere)|(zwischen))\\b"
+					"match": "\\b((oder)|(und)|(nicht)|(gleich)|(ungleich)|(kleiner)|(größer)|(groesser)|(als)|(zwischen)|(die\\s+L(ä|ae)nge\\s+von)|(die\\s+Gr(ö|oe)(ß|ss)e\\s+von)|(verkettet\\s+mit))\\b"
+				},
+				{
+					"name": "keyword.operator.new.math.ddp",
+					"match": "(plus)|(minus)|(mal)|(durch)|(modulo)|(hoch)|(Wurzel)|(logisch)|(kontra)|(der\\s+Logarithmus\\s+von)|(zur\\s+Basis)|(Betrag\\s+von)|(um)|(Bit\\s+nach\\s+(links|rechts)\\s+verschoben)|([Vv]erringere)|([Ee]rhöhe)|([Ee]rhoehe)|([Tt]eile)|([Vv]ervielfache)|([Ss]ubtrahiere)|([Aa]ddiere)|([Mm]ultipliziere)|([Dd]ividiere)|([Nn]egiere)"
+				},
+				{
+					"name": "keyword.operator.new.range.ddp",
+					"match": "(im\\s+Bereich\\s+von)|(ab\\s+dem)|(bis\\s+zum\\s+)|(\\.\\s+Element)"
 				}
 			]
 		},
@@ -75,7 +83,7 @@
 			"patterns": [
 				{
 					"name": "support.type.ddp",
-					"match": "\\b((Zahl)|(Kommazahl)|(Wahrheitswert)|(Buchstabe[n]?)|(Text)|(Zahlen Liste)|(Kommazahlen Liste)|(Wahrheitswert Liste)|(Buchstaben Liste)|(Text Liste)|(Zahlen Referenz)|(Kommazahlen Referenz)|(Wahrheitswert Referenz)|(Buchstaben Referenz)|(Text Referenz)|(Zahlen Listen Referenz)|(Kommazahlen Listen Referenz)|(Wahrheitswert Listen Referenz)|(Buchstaben Listen Referenz)|(Text Listen Referenz))\\b"
+					"match": "\\b(((Zahlen|Kommazahlen|Wahrheitswert|Buchstaben|Text)\\s+((Liste|Referenz)|(Listen\\s+Referenz)))|(Zahl|Kommazahl|Wahrheitswert|Buchstaben?|Text))\\b"
 				}
 			]
 		},
@@ -113,11 +121,11 @@
 				},
 				{
 					"name": "constant.language.boolean.ddp",
-					"match": "(wahr)|(falsch)"
+					"match": "(wahr|falsch)"
 				},
 				{
 					"name": "constant.numeric.ddp",
-					"match": "-?(\\d+,?\\d*)"
+					"match": "-?(\\d+(,\\d+)?)"
 				}
 			]
 		},
@@ -125,7 +133,7 @@
 			"patterns": [
 				{
 					"name": "meta.function.ddp",
-					"match": "Die\\s+((ö|(oe))ffentliche\\s+)?Funktion\\s+([\\wäöüÄÖÜ]+)\\s+gibt\\s+(nichts|einen?\\s+[\\wäöüÄÖÜ]+)\\s+zur(ü|(ue))ck,(\\s*macht:)?",
+					"match": "Die\\s+((?:ö|oe)ffentliche\\s+)?Funktion\\s+([\\wäöüÄÖÜß]+)\\s+gibt\\s+(nichts|einen?\\s+[\\wäöüÄÖÜß]+)\\s+zur(?:ü|ue)ck,(\\s*macht:)?",
 					"captures": {
 						"0": {
 							"name": "keyword.other.ddp"
@@ -133,20 +141,20 @@
 						"1": {
 							"name": "keyword.control.ddp"
 						},
-						"4": {
+						"2": {
 							"name": "entity.name.function.ddp"
 						},
-						"7": {
+						"3": {
 							"name": "support.type.ddp"
 						},
-						"8": {
+						"4": {
 							"name": "keyword.control.ddp"
 						}
 					}
 				},
 				{
 					"name": "meta.function.ddp",
-					"match": "Die\\s+((ö|(oe))ffentliche\\s+)?Funktion\\s+([\\wäöüÄÖÜ]+)\\s+mit\\s+dem\\s+Parameter\\s+([\\wäöüÄÖÜ]+)\\s+vom\\s+Typ\\s+([\\w\\säöüÄÖÜ]+),\\s*gibt\\s+(nichts|einen?\\s+[\\w\\säöüÄÖÜ]+)\\s+zur(ü|(ue))ck,(\\s*macht:)?",
+					"match": "Die\\s+((?:ö|oe)ffentliche\\s+)?Funktion\\s+([\\wäöüÄÖÜß]+)\\s+mit\\s+dem\\s+Parameter\\s+([\\wäöüÄÖÜß]+)\\s+vom\\s+Typ\\s+([\\w\\säöüÄÖÜß]+),\\s*gibt\\s+(nichts|einen?\\s+[\\w\\säöüÄÖÜß]+)\\s+zur(?:ü|ue)ck,(\\s*macht:)?",
 					"captures": {
 						"0": {
 							"name": "keyword.other.ddp"
@@ -154,11 +162,44 @@
 						"1": {
 							"name": "keyword.control.ddp"
 						},
-						"4": {
+						"2": {
 							"name": "entity.name.function.ddp"
 						},
-						"5": {
+						"3": {
 							"name": "variable.parameter.ddp"
+						},
+						"4": {
+							"name": "support.type.ddp"
+						},
+						"5": {
+							"name": "support.type.ddp"
+						},
+						"6": {
+							"name": "keyword.control.ddp"
+						}
+					}
+				},
+				{
+					"name": "meta.function.ddp",
+					"match": "Die\\s+((?:ö|oe)ffentliche\\s+)?Funktion\\s+([\\wäöüÄÖÜß]+)\\s+mit\\s+den\\s+Parametern\\s+(\\w+(?:,\\s*[\\wäöüÄÖÜß]+)*)\\s+und\\s+([\\wäöüÄÖÜß]+)\\s+vom\\s+Typ\\s+([\\w\\säöüÄÖÜß]+(?:,\\s*[\\w\\säöüÄÖÜß]+)*)\\s+und\\s+([\\w\\säöüÄÖÜß]+),\\s*gibt\\s+(nichts|einen?\\s+[\\w\\säöüÄÖÜß]+)\\s+zur(?:ü|ue)ck,(\\s*macht:)?",
+					"captures": {
+						"0": {
+							"name": "keyword.other.ddp"
+						},
+						"1": {
+							"name": "keyword.control.ddp"
+						},
+						"2": {
+							"name": "entity.name.function.ddp"
+						},
+						"3": {
+							"name": "variable.parameter.ddp"
+						},
+						"4": {
+							"name": "variable.parameter.ddp"
+						},
+						"5": {
+							"name": "support.type.ddp"
 						},
 						"6": {
 							"name": "support.type.ddp"
@@ -166,40 +207,7 @@
 						"7": {
 							"name": "support.type.ddp"
 						},
-						"10": {
-							"name": "keyword.control.ddp"
-						}
-					}
-				},
-				{
-					"name": "meta.function.ddp",
-					"match": "Die\\s+((ö|(oe))ffentliche\\s+)?Funktion\\s+([\\wäöüÄÖÜ]+)\\s+mit\\s+den\\s+Parametern\\s+(\\w+(?:,\\s*[\\wäöüÄÖÜ]+)*)\\s+und\\s+([\\wäöüÄÖÜ]+)\\s+vom\\s+Typ\\s+([\\w\\säöüÄÖÜ]+(?:,\\s*[\\w\\säöüÄÖÜ]+)*)\\s+und\\s+([\\w\\säöüÄÖÜ]+),\\s*gibt\\s+(nichts|einen? [\\w\\säöüÄÖÜ]+)\\s+zur(ü|(ue))ck,(\\s*macht:)?",
-					"captures": {
-						"0": {
-							"name": "keyword.other.ddp"
-						},
-						"1": {
-							"name": "keyword.control.ddp"
-						},
-						"4": {
-							"name": "entity.name.function.ddp"
-						},
-						"5": {
-							"name": "variable.parameter.ddp"
-						},
-						"6": {
-							"name": "variable.parameter.ddp"
-						},
-						"7": {
-							"name": "support.type.ddp"
-						},
 						"8": {
-							"name": "support.type.ddp"
-						},
-						"9": {
-							"name": "support.type.ddp"
-						},
-						"12": {
 							"name": "keyword.control.ddp"
 						}
 					}
@@ -255,7 +263,12 @@
 				},
 				{
 					"name": "keyword.struct.ddp",
-					"match": "Wir nennen die Kombination aus"
+					"match": "Wir\\s+nennen\\s+die\\s+((?:ö|oe)ffentliche\\s+)?Kombination\\s+aus",
+					"captures": {
+						"1": {
+							"name": "keyword.control.ddp"
+						}
+					}
 				},
 				{
 					"name": "keyword.control.alias.ddp",
