@@ -1,43 +1,77 @@
 {
-	"For Loop": {
+	"Für Schleife": {
 		"scope": "ddp",
 		"prefix": "Für",
 		"body": [
-			"Für jede Zahl ${1:index} von ${2:Start} bis ${3:Ende}, mache:",
-			"\t${4:Schreibe die Zahl ${1:index}}."
+			"Für jede ${1|Zahl,Kommazahl|} ${2:index} von ${3:Start} bis ${4:Ende}, mache:",
+			"\t${5:$BLOCK_COMMENT_START Schleifen Körper $BLOCK_COMMENT_END}"
 		],
 		"description": "Für Schleife"
 	},
-	"While Loop": {
+	"Iterative Für Schleife": {
+		"scope": "ddp",
+		"prefix": "Für",
+		"body": [
+			"Für ${1|jede,jeden|} ${2:Typ} ${3:variable} in ${4:liste}, mache:",
+			"\t${5:$BLOCK_COMMENT_START Schleifen Körper $BLOCK_COMMENT_END}"
+		],
+		"description": "Iterative Für Schleife"
+	},
+	"Für Schleife mit Schrittgröße": {
+		"scope": "ddp",
+		"prefix": "Für",
+		"body": [
+			"Für jede ${1|Zahl,Kommazahl|} ${2:index} von ${3:Start} bis ${4:Ende} mit Schrittgröße ${5:n}, mache:",
+			"\t${6:$BLOCK_COMMENT_START Schleifen Körper $BLOCK_COMMENT_END}"
+		],
+		"description": "Für Schleife mit Schrittgröße"
+	},
+	"Solange Schleife": {
 		"scope": "ddp",
 		"prefix": "Solange",
 		"body": [
 			"Solange ${1:Bedingung} ist, mache:",
-			"\t$BLOCK_COMMENT_START Schleifen Körper $BLOCK_COMMENT_END"
+			"\t${2:$BLOCK_COMMENT_START Schleifen Körper $BLOCK_COMMENT_END}"
 		],
 		"description": "Solange Schleife"
 	},
-	"Do While Loop": {
+	"Mache-solange Schleife": {
 		"scope": "ddp",
 		"prefix": "Mache",
 		"body": [
 			"Mache:",
-			"\t$BLOCK_COMMENT_START Schleifen Körper $BLOCK_COMMENT_END",
+			"\t${2:$BLOCK_COMMENT_START Schleifen Körper $BLOCK_COMMENT_END}",
 			"Solange ${1:Bedingung} ist."
 		],
 		"description": "Mache-solange Schleife"
 	},
-	"Repeat": {
+	"Wiederholung": {
 		"scope": "ddp",
 		"prefix": "Wiederhole",
 		"body": [
 			"Wiederhole:",
-			"\t$BLOCK_COMMENT_START Wiederholungs Körper $BLOCK_COMMENT_END",
+			"\t${2:$BLOCK_COMMENT_START Wiederholungs Körper $BLOCK_COMMENT_END}",
 			"${1:Anzahl} Mal."
 		],
 		"description": "Wiederholung"
 	},
-	"If": {
+	"break": {
+		"scope": "ddp",
+		"prefix": ["break", "Verlasse"],
+		"body": [
+			"Verlasse die Schleife."
+		],
+		"description": "Schleife verlassen"
+	},
+	"continue": {
+		"scope": "ddp",
+		"prefix": ["continue", "Fahre"],
+		"body": [
+			"Fahre mit der Schleife fort."
+		],
+		"description": "Nächster Schleifen Durchlauf"
+	},
+	"Wenn": {
 		"scope": "ddp",
 		"prefix": "Wenn",
 		"body": [
@@ -46,7 +80,7 @@
 		],
 		"description": "Wenn Anweisung"
 	},
-	"ElseIf": {
+	"Wenn aber": {
 		"scope": "ddp",
 		"prefix": "Wenn aber",
 		"body": [
@@ -57,7 +91,7 @@
 		],
 		"description": "Wenn Anweisung mit Wenn aber Anweisung"
 	},
-	"Else": {
+	"Sonst": {
 		"scope": "ddp",
 		"prefix": "Sonst",
 		"body": [
@@ -66,7 +100,18 @@
 		],
 		"description": "Sonst Anweisung"
 	},
-	"Include": {
+	"Wenn-Sonst": {
+		"scope": "ddp",
+		"prefix": "Wenn",
+		"body": [
+			"Wenn ${1:Bedingung} ist, dann:",
+			"\t${2:$BLOCK_COMMENT_START Wenn Körper $BLOCK_COMMENT_END}",
+			"Sonst:",
+			"\t${3:$BLOCK_COMMENT_START Sonst Körper $BLOCK_COMMENT_END}"
+		],
+		"description": "Wenn-Sonst Anweisung"
+	},
+	"Einbindung": {
 		"scope": "ddp",
 		"prefix": "Binde",
 		"body": [
@@ -74,7 +119,7 @@
 		],
 		"description": "Einbindung"
 	},
-	"Include-std": {
+	"Duden-Einbindung": {
 		"scope": "ddp",
 		"prefix": "Binde-Duden",
 		"body": [
@@ -82,7 +127,7 @@
 		],
 		"description": "Duden Einbindung"
 	},
-	"Function-NoParam": {
+	"Funktion ohne Parameter": {
 		"scope": "ddp",
 		"prefix": [
 			"Die Funktion",
@@ -90,13 +135,13 @@
 		],
 		"body": [
 			"Die Funktion ${1:Name} gibt ${2:nichts} zurück, macht:",
-			"\t$BLOCK_COMMENT_START Funktions Körper $BLOCK_COMMENT_END",
+			"\t${4:$BLOCK_COMMENT_START Funktions Körper $BLOCK_COMMENT_END}",
 			"Und kann so benutzt werden:",
 			"\t\"${3:Alias}\""
 		],
 		"description": "Funktions Deklaration ohne Parameter"
 	},
-	"Function-OneParam": {
+	"Funktion mit einem Parameter": {
 		"scope": "ddp",
 		"prefix": [
 			"Die Funktion",
@@ -104,13 +149,13 @@
 		],
 		"body": [
 			"Die Funktion ${1:Name} mit dem Parameter ${2:x} vom Typ ${3:Zahl}, gibt ${4:nichts} zurück, macht:",
-			"\t$BLOCK_COMMENT_START Funktions Körper $BLOCK_COMMENT_END",
+			"\t${6:$BLOCK_COMMENT_START Funktions Körper $BLOCK_COMMENT_END}",
 			"Und kann so benutzt werden:",
-			"\t\"${5:Alias <x>}\""
+			"\t\"${5:Alias <${2:x}>}\""
 		],
 		"description": "Funktions Deklaration mit einem Parameter"
 	},
-	"Function-MultipleParam": {
+	"Funktion mit zwei Parameter": {
 		"scope": "ddp",
 		"prefix": [
 			"Die Funktion",
@@ -118,13 +163,27 @@
 		],
 		"body": [
 			"Die Funktion ${1:Name} mit den Parametern ${2:x} und ${3:y} vom Typ ${4:Zahl} und ${5:Zahl}, gibt ${6:nichts} zurück, macht:",
-			"\t$BLOCK_COMMENT_START Funktions Körper $BLOCK_COMMENT_END",
+			"\t${8:$BLOCK_COMMENT_START Funktions Körper $BLOCK_COMMENT_END}",
 			"Und kann so benutzt werden:",
-			"\t\"${7:Alias <x> <y>}\""
+			"\t\"${7:Alias <${2:x}> <${3:y}>}\""
 		],
-		"description": "Funktions Deklaration mit mehreren Parametern"
+		"description": "Funktions Deklaration mit zwei Parametern"
 	},
-	"Function-Extern": {
+	"Funktion mit drei Parameter": {
+		"scope": "ddp",
+		"prefix": [
+			"Die Funktion",
+			"Funktion"
+		],
+		"body": [
+			"Die Funktion ${1:Name} mit den Parametern ${2:x}, ${3:y} und ${4:z} vom Typ ${5:Zahl}, ${6:Zahl} und ${7:Zahl}, gibt ${8:nichts} zurück, macht:",
+			"\t${10:$BLOCK_COMMENT_START Funktions Körper $BLOCK_COMMENT_END}",
+			"Und kann so benutzt werden:",
+			"\t\"${9:Alias <${2:x}> <${3:x}> <${4:x}>}\""
+		],
+		"description": "Funktions Deklaration mit drei Parametern"
+	},
+	"Externe Funktion": {
 		"scope": "ddp",
 		"prefix": "Externe Funktion",
 		"body": [
@@ -133,7 +192,7 @@
 			"und kann so benutzt werden:",
 			"\t\"${8:Alias <x> <y>}\""
 		],
-		"description": "Funktions Deklaration mit mehreren Parametern"
+		"description": "Externe funktions Deklaration mit zwei Parametern"
 	},
 	"Function-Alias": {
 		"scope": "ddp",
@@ -144,13 +203,12 @@
 		],
 		"description": "Alias definition"
 	},
-	"Struct-Decl": {
+	"Kombination": {
 		"scope": "ddp",
 		"prefix": [
 			"Wir",
 			"Wir nennen",
-			"Struktur",
-			"struct"
+			"Kombination"
 		],
 		"body": [
 			"Wir nennen die Kombination aus",
@@ -158,9 +216,10 @@
 			"${5|ein,eine,einen|} ${6:Typname},",
 			"und erstellen sie so:",
 			"\t\"${7:Alias <x>}\""
-		]
+		],
+		"description": "Kombinations Deklaration"
 	},
-	"Struct-Alias": {
+	"Kombinationsalias": {
 		"scope": "ddp",
 		"prefix": "Und erstellen",
 		"body": [
@@ -168,7 +227,7 @@
 			"\t\"${1:Alias}\""
 		]
 	},
-	"Alias-Decl": {
+	"Alias Deklaration": {
 		"scope": "ddp",
 		"prefix": [
 			"Alias",
@@ -177,9 +236,9 @@
 		"body": [
 			"Der Alias \"${1:Alias}\" steht für die Funktion ${2:Funktion}."
 		],
-		"description": "Alias declaration"
+		"description": "Alias Deklaration"
 	},
-	"var-die": {
+	"Variable": {
 		"scope": "ddp",
 		"prefix": "Variable",
 		"body": [
@@ -187,7 +246,7 @@
 		],
 		"description": "Variablen deklaration"
 	},
-	"var-bool": {
+	"Wahrheitswert Variable": {
 		"scope": "ddp",
 		"prefix": "Variable Wahrheitswert",
 		"body": [
@@ -195,15 +254,85 @@
 		],
 		"description": "Variablen deklaration eines Wahrheitswertes"
 	},
-	"mutate": {
+	"Variable verändern": {
 		"scope": "ddp",
 		"prefix": "Speichere",
 		"body": [
 			"Speichere ${1:Ausdruck} in ${2:Variable}."
 		],
-		"description": ""
+		"description": "Variable verändern"
 	},
-	"index": {
+	"leere Liste": {
+		"scope": "ddp",
+		"prefix": [
+			"eine leere",
+			"leere"
+		],
+		"body": [
+			" eine leere ${1:Typ} Liste"
+		],
+		"description": "Eine leere Liste erstellen"
+	},
+	"leere Liste2": {
+		"scope": "ddp",
+		"prefix": [
+			"einer leeren",
+			"leeren"
+		],
+		"body": [
+			" einer leeren ${1:Typ} Liste"
+		],
+		"description": "eine leere Liste erstellen"
+	},
+	"Listenliteral 1": {
+		"scope": "ddp",
+		"prefix": "eine Liste, die aus",
+		"body": [
+			"eine Liste, die aus ${1:Werte} besteht"
+		],
+		"description": "Listen Literal 1"
+	},
+	"Listenliteral 2": {
+		"scope": "ddp",
+		"prefix": "einer Liste, die aus",
+		"body": [
+			"einer Liste, die aus ${1:Werte} besteht"
+		],
+		"description": "Listen Literal 2"
+	},
+	"Länge": {
+		"scope": "ddp",
+		"prefix": "die Länge",
+		"body": [
+			"die Länge von ${1:x}"
+		],
+		"description": "Länge Operator"
+	},
+	"Logarithmus": {
+		"scope": "ddp",
+		"prefix": "der Logarithmus",
+		"body": [
+			"der Logarithmus von ${1:x} zur Basis ${2:b}"
+		],
+		"description": "Logarithmus Operator"
+	},
+	"Bit verschiebung rechts": {
+		"scope": "ddp",
+		"prefix": ["um", "Bit", "Bit nach"],
+		"body": [
+			"um ${1:x} Bit nach rechts verschoben"
+		],
+		"description": "Bit Verschiebung rechts"
+	},
+	"Bit verschiebung links": {
+		"scope": "ddp",
+		"prefix": ["um", "Bit", "Bit nach"],
+		"body": [
+			"um ${1:x} Bit nach links verschoben"
+		],
+		"description": "Bit Verschiebung links"
+	},
+	"Indexierung": {
 		"scope": "ddp",
 		"prefix": [
 			"an",
@@ -214,43 +343,5 @@
 			"an der Stelle ${1:Ausdruck}"
 		],
 		"description": "Listen Indexierung"
-	},
-	"empty list 1": {
-		"scope": "ddp",
-		"prefix": [
-			"eine leere",
-			"leere"
-		],
-		"body": [
-			" eine leere ${1:Typ} Liste"
-		],
-		"description": "Leere Liste 1"
-	},
-	"empty list 2": {
-		"scope": "ddp",
-		"prefix": [
-			"einer leeren",
-			"leeren"
-		],
-		"body": [
-			" einer leeren ${1:Typ} Liste"
-		],
-		"description": "Leere Liste 2"
-	},
-	"list literal 1": {
-		"scope": "ddp",
-		"prefix": "eine Liste, die aus",
-		"body": [
-			"eine Liste, die aus ${1:Werte} besteht"
-		],
-		"description": "Listen Literal 1"
-	},
-	"list literal 2": {
-		"scope": "ddp",
-		"prefix": "einer Liste, die aus",
-		"body": [
-			"einer Liste, die aus ${1:Werte} besteht"
-		],
-		"description": "Listen Literal 2"
 	}
 }
