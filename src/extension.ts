@@ -58,6 +58,12 @@ export function activate(ctx: vscode.ExtensionContext) {
 	let langSrvDisposable = lspClient.start();
 	ctx.subscriptions.push(langSrvDisposable);
 
+	ctx.subscriptions.push(vscode.commands.registerCommand("ddp.languageserver.stop", async () => {
+		out.appendLine("stopping DDPLS");
+		await lspClient.stop();
+		langSrvDisposable.dispose();
+	}));
+
 	ctx.subscriptions.push(vscode.commands.registerCommand("ddp.languageserver.restart", async () => {
 		out.appendLine("restarting DDPLS");
 		await lspClient.stop();
