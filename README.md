@@ -14,13 +14,24 @@ Im Erweiterungen Menü in vscode nach DDP suchen und installieren oder über die
 
 Optional direkt von der [Github Release Seite](https://github.com/DDP-Projekt/vscode-ddp/releases) herunterladen.
 
-### Developer version
-1. Dieses Repo in den Ordner\
+## Mitwirken
+### vscode-ddp debuggen
+1. Repo Klonen
+2. npm install
+3. npm run compile
+4. F5 to debug
+<!--1. Dieses Repo in den Ordner\
    `%USERPROFILE%\.vscode\extensions` auf Windows\
    `~/.vscode/extensions` auf MacOS\
    `~/.vscode/extensions` auf Linux<br>
    klonen.
-2. VSCode neustarten.
+2. VSCode neustarten.-->
+### Dateien
+- `snippets/snippets.json`: Enthält Snippet-Definitionen
+- `src/extention.ts`: Registriert Befehle und initialisiert DDPLS
+- `syntaxes/ddp.tmLanguage.json`: Enthält Static-Highlighting RegExes
+- `language-configuration.json`: Sprachregeln
+- `package.json`: Erweiterungskonfiguration
 
 ## Release
 
