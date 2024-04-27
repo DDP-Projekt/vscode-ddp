@@ -5,10 +5,11 @@ import * as langsrv from 'vscode-languageclient/node';
 import * as path from 'path';
 import * as os from 'os';
 import * as fs from 'fs';
+import { lookpath } from 'lookpath';
 
 let DDPPATH = process.env.DDPPATH;
 
-export function activate(ctx: vscode.ExtensionContext) {
+export async function activate(ctx: vscode.ExtensionContext) {
 	console.log('ddp extension activated');
 
 	let out = vscode.window.createOutputChannel("vscode-ddp", "ddp");
@@ -20,29 +21,39 @@ export function activate(ctx: vscode.ExtensionContext) {
 
 	let config = vscode.workspace.getConfiguration('ddp');
 
-	let commandName = "DDPLS";
+	let ddplsCommand = os.platform() === 'win32' ? 'DDPLS.exe' : 'DDPLS';
 	{
-		let ddplsPath = ctx.asAbsolutePath(path.join('bin', os.platform() === 'win32' ? 'DDPLS.exe' : 'DDPLS'));
-		out.appendLine("bundled ddplsPath: " + ddplsPath);
+		let ddplsPath = ctx.asAbsolutePath(path.join('bin', ddplsCommand));
 		if (fs.existsSync(ddplsPath)) {
-			out.appendLine("using bundled DDPLS");
-			out.appendLine(ddplsPath);
-			commandName = ddplsPath;
+			out.appendLine("found bundled DDPLS: " + ddplsPath);
+			ddplsCommand = ddplsPath;
+		}
+	}
+	{
+		let useSystemLs = config.get<boolean>("DDPLS.useSystemwideInstall");
+		if (useSystemLs === true) {
+			let ddplsPath = await lookpath('DDPLS');
+			if (ddplsPath !== undefined) {
+				out.appendLine("using system-wide DDPLS: " + ddplsPath);
+				ddplsCommand = ddplsPath;
+			} else {
+				out.appendLine("no system-wide DDPLS found, falling back to bundled DDPLS");
+			}
 		}
 	}
 	{
 		let ddplsPath = config.get<string>("DDPLS.path");
 		if (ddplsPath !== "" && ddplsPath !== undefined) {
-			out.appendLine("using custom DDPLS path");
-			commandName = ddplsPath;
+			out.appendLine("using custom DDPLS path: " + ddplsPath);
+			ddplsCommand = ddplsPath;
 		}
 	}
 
 	let lsArgs = config.get<string[]>("DDPLS.flags");
 	// DDPLS must be installed and in the PATH
 	let serverOptions: langsrv.ServerOptions = {
-		run: { command: commandName, args: lsArgs },
-		debug: { command: commandName, args: lsArgs }
+		run: { command: ddplsCommand, args: lsArgs },
+		debug: { command: ddplsCommand, args: lsArgs }
 	};
 
 	let clientOptions: langsrv.LanguageClientOptions = {

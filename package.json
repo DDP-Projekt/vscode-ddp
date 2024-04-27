@@ -88,6 +88,11 @@
 					"default": "",
 					"description": "if present this DDPLS binary is used instead of the one shipped with the extension or the global one"
 				},
+				"ddp.DDPLS.useSystemwideInstall": {
+					"type": "boolean",
+					"default": false,
+					"description": "if true the system-wide installed DDPLS is used instead of the one shipped with the extension"
+				},
 				"ddp.DDPLS.flags": {
 					"type": "array",
 					"default": [],
@@ -106,6 +111,7 @@
 		}
 	},
 	"dependencies": {
+		"lookpath": "^1.2.2",
 		"vscode-languageclient": "^7.0.0"
 	},
 	"scripts": {
