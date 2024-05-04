@@ -20,6 +20,12 @@
 		"Snippets"
 	],
 	"main": "./out/extension.js",
+	"activationEvents": [
+		"onLanguage:ddp",
+		"onCommand:ddp.run.file",
+		"onCommand:ddp.languageserver.stop",
+		"onCommand:ddp.languageserver.restart",
+	],
 	"contributes": {
 		"languages": [
 			{
