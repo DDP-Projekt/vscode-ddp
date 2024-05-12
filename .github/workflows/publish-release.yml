@@ -10,7 +10,10 @@ jobs:
         with:
           node-version: 20
       - run: npm ci
-      
+
+      - name: Download latest DDPLS release
+        run: wget -P bin/ https://github.com/DDP-Projekt/DDPLS/releases/latest/download/DDPLS https://github.com/DDP-Projekt/DDPLS/releases/latest/download/DDPLS.exe 
+
       #- name: Publish to Open VSX Registry
       #  uses: HaaLeo/publish-vscode-extension@v1
       #  with:
