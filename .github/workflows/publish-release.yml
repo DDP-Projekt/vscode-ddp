@@ -23,8 +23,7 @@ jobs:
         uses: HaaLeo/publish-vscode-extension@v1
         id: publish-extention
         with:
-          dryRun: true # remove when marketplace token is in place
-          pat: 'remove_me' #${{ secrets.VS_MARKETPLACE_TOKEN }}
+          pat: ${{ secrets.VS_MARKETPLACE_TOKEN }}
           registryUrl: https://marketplace.visualstudio.com
           
       - name: get-npm-version
