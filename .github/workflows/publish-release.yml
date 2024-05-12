@@ -1,0 +1,40 @@
+on: workflow_dispatch
+
+name: Deploy Extension
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm ci
+      
+      #- name: Publish to Open VSX Registry
+      #  uses: HaaLeo/publish-vscode-extension@v1
+      #  with:
+      #    pat: ${{ secrets.OPEN_VSX_TOKEN }}
+      
+      - name: Publish to Visual Studio Marketplace
+        uses: HaaLeo/publish-vscode-extension@v1
+        id: publish-extention
+        with:
+          dryRun: true # remove when marketplace token is in place
+          pat: 'remove_me' #${{ secrets.VS_MARKETPLACE_TOKEN }}
+          registryUrl: https://marketplace.visualstudio.com
+          
+      - name: get-npm-version
+        id: package-version
+        uses: martinbeentjes/npm-get-version-action@v1.3.1
+        
+      - name: Create Release
+        id: create_release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v${{ steps.package-version.outputs.current-version}}
+          name: Release v${{ steps.package-version.outputs.current-version}}
+          body: 'Gehört zum Kompilierer Release `<version>`'
+          draft: true
+          files: ${{ steps.publish-extention.outputs.vsixPath}}
+          fail_on_unmatched_files: true
