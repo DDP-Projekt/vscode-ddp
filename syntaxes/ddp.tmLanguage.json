@@ -40,7 +40,7 @@
 			"patterns": [
 				{
 					"name": "keyword.control.ddp",
-					"match": "\\b(([Ww]enn)|(dann)|([Ss]onst)|(aber)|([Ff](ü|ue)r)|(jeden?)|(in)|([Ss]olange)|([Mm]ach[et])|(zur(ü|ue)ck)|([Gg]ibt?)|([Vv]erlasse\\s+die\\s+((Funktion)|(Schleife)))|([Ff]ahre\\s+mit\\s+der\\s+Schleife\\s+fort)|(von)|(vom)|(bis)|(jede)|(jeder)|(Schrittgr(ö|(oe))(ß|ss)e))|(Mal)|([Ww]iederhole)|((ö|oe)ffentlichen?)\\b"
+					"match": "\\b(([Ww]enn)|(dann)|([Ss]onst)|(aber)|([Ff](ü|ue)r)|(jeden?)|(in)|([Ss]olange)|([Mm]ach[et])|(zur(ü|ue)ck)|([Gg]ibt?)|([Vv]erlasse\\s+die\\s+((Funktion)|(Schleife)))|([Ff]ahre\\s+mit\\s+der\\s+Schleife\\s+fort)|(von)|(vom)|(bis)|(jede)|(jeder)|(Schrittgr(ö|(oe))(ß|ss)e))|(Mal)|([Ww]iederhole)|((ö|oe)ffentlichen?)|(falls)|(ansonsten)\\b"
 				},
 				{
 					"name": "meta.preprocessor",
@@ -59,7 +59,7 @@
 				},
 				{
 					"name": "keyword.other.ddp",
-					"match": "\\b([Dd]er)|([Dd]ie)|([Dd]as)|(de[mn])|(ist)|(an)|(Stelle)|([Ss]peichere\\s+das\\s+Ergebnis\\s+von)|([Ss]peichere)|(eine[rn])|(eine)|(ein)|(leeren?)|(Liste)|(aus)|(besteht)|(Funktion)|(mit)|(Parametern?)|(Typ)|(Standardwert)\\b"
+					"match": "\\b([Dd]er)|([Dd]ie)|([Dd]as)|(de[mn])|(ist)|(an)|(Stelle)|([Ss]peichere\\s+das\\s+Ergebnis\\s+von)|([Ss]peichere)|(eine[rn])|(eine)|(ein)|(leeren?)|(Liste)|(aus)|(besteht)|(Funktion)|(mit)|(Parametern?)|(Typ)|(Standardwert)|(sichtbar)|(extern)\\b"
 				}
 			]
 		},
@@ -67,7 +67,7 @@
 			"patterns": [
 				{
 					"name": "keyword.operator.new.ddp",
-					"match": "\\b((oder)|(und)|(nicht)|(gleich)|(ungleich)|(kleiner)|(größer)|(groesser)|(als)|(zwischen)|(die\\s+L(ä|ae)nge\\s+von)|(die\\s+Gr(ö|oe)(ß|ss)e\\s+von)|(verkettet\\s+mit))\\b"
+					"match": "\\b((oder)|(und)|(nicht)|(gleich)|(ungleich)|(kleiner)|(größer)|(groesser)|(als)|(zwischen)|(die\\s+L(ä|ae)nge\\s+von)|(die\\s+Gr(ö|oe)(ß|ss)e\\s+von)|(verkettet\\s+mit))|(entweder)\\b"
 				},
 				{
 					"name": "keyword.operator.new.math.ddp",
@@ -231,7 +231,7 @@
 					"name": "meta.preprocessor.string.ddp",
 					"patterns": [
 						{
-							"match": "<[\\wäöüÄÖÜ]+>",
+							"match": "<!?[\\wäöüÄÖÜ]+>",
 							"name": "variable.parameter.alias.ddp"
 						},
 						{
@@ -252,7 +252,7 @@
 							"patterns": [
 								{
 									"name": "variable.parameter.alias.ddp",
-									"match": "<[\\wäöüÄÖÜ]+>"
+									"match": "<!?[\\wäöüÄÖÜ]+>"
 								}
 							]
 						},
@@ -280,7 +280,7 @@
 					"name": "meta.preprocessor.string.ddp",
 					"patterns": [
 						{
-							"match": "<[\\wäöüÄÖÜ]+>",
+							"match": "<!?[\\wäöüÄÖÜ]+>",
 							"name": "variable.parameter.alias.ddp"
 						},
 						{
