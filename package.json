@@ -74,6 +74,10 @@
 				"title": "DDP: Run the current file",
 				"description": "Runs the currently open file using $kddp starte",
 				"icon": "$(run)"
+			},
+			{
+				"command": "ddp.showAST",
+				"title": "DDP: Show AST"
 			}
 		],
 		"configuration": {
@@ -112,6 +116,15 @@
 					"command": "ddp.run.file",
 					"when": "resourceLangId == ddp",
 					"group": "navigation"
+				}
+			]
+		},
+		"views": {
+			"explorer": [
+				{
+					"id": "simpleTreeView",
+					"name": "Simple Tree View",
+					"icon": "folder"
 				}
 			]
 		}

@@ -6,6 +6,7 @@ import * as path from 'path';
 import * as os from 'os';
 import * as fs from 'fs';
 import { lookpath } from 'lookpath';
+import { AstTreeDataProvider } from './ast'
 
 let DDPPATH = process.env.DDPPATH;
 
@@ -119,6 +120,18 @@ export async function activate(ctx: vscode.ExtensionContext) {
 		terminal.show();
 		terminal.sendText(command);
 	}));
+	
+	let showCommand = vscode.commands.registerCommand('ddp.showAST', () => {
+		// Register the tree data provider
+		const treeDataProvider = new AstTreeDataProvider(lspClient);
+
+		// Register the TreeView in the sidebar
+		vscode.window.createTreeView('simpleTreeView', {
+			treeDataProvider: treeDataProvider
+		});
+	});
+
+	ctx.subscriptions.push(showCommand);
 }
 
 export function deactivate() { }
