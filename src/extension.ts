@@ -6,8 +6,8 @@ import * as path from 'path';
 import * as os from 'os';
 import * as fs from 'fs';
 import { lookpath } from 'lookpath';
-import './ast'
-import { register } from './ast';
+import './ast';
+import { nodePickerMode, register } from './ast';
 
 let DDPPATH = process.env.DDPPATH;
 
@@ -63,7 +63,17 @@ export async function activate(ctx: vscode.ExtensionContext) {
 			{
 				pattern: '**/*.ddp',
 			}
-		]
+		],
+		middleware: {
+            provideHover: (document, position, token, next) => {
+                if (nodePickerMode) {
+                    return null; // Return null to prevent the hover provider from working
+                }
+
+                // Otherwise, provide LSP hover
+                return next(document, position, token);
+            }
+		}
 	};
 
 	let lspClient = new langsrv.LanguageClient("ddpls", "DDPLS", serverOptions, clientOptions);
@@ -123,10 +133,10 @@ export async function activate(ctx: vscode.ExtensionContext) {
 	}));
 
 	ctx.subscriptions.push(vscode.commands.registerCommand('ddp.ast.show', () => {
-		vscode.commands.executeCommand("ast-view-tree.focus")
-	}))
+		vscode.commands.executeCommand("ast-view-tree.focus");
+	}));
 
-	lspClient.onReady().then(() => register(ctx, lspClient))
+	lspClient.onReady().then(() => register(ctx, lspClient));
 }
 
 export function deactivate() { }

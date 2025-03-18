@@ -20,12 +20,6 @@
 		"Snippets"
 	],
 	"main": "./out/extension.js",
-	"activationEvents": [
-		"onLanguage:ddp",
-		"onCommand:ddp.run.file",
-		"onCommand:ddp.languageserver.stop",
-		"onCommand:ddp.languageserver.restart"
-	],
 	"contributes": {
 		"languages": [
 			{
@@ -88,6 +82,11 @@
 				"command": "ddp.ast.goToNode",
 				"title": "DDP: Go to Node",
 				"icon": "$(symbol-reference)"
+			},
+			{
+				"command": "ddp.ast.nodePicker",
+				"title": "DDP: Node Picker",
+				"icon": "$(inspect)"
 			}
 		],
 		"viewsContainers": {
@@ -140,6 +139,11 @@
 			"view/title": [
 				{
 					"command": "ddp.ast.refresh",
+					"when": "view == ast-view-tree",
+					"group": "navigation"
+				},
+				{
+					"command": "ddp.ast.nodePicker",
 					"when": "view == ast-view-tree",
 					"group": "navigation"
 				}
