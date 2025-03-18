@@ -135,25 +135,32 @@ export async function activate(ctx: vscode.ExtensionContext) {
 		}))
 
 		let prevSelectionEmpty = false
-		let debounceTimeout: NodeJS.Timeout | null = null
 		// Listen for changes in the text editor's selection
 		vscode.window.onDidChangeTextEditorSelection((e) => {
 			if (!view.visible) return
 			if (prevSelectionEmpty && e.selections[0].isEmpty) return
 
 			prevSelectionEmpty = e.selections[0].isEmpty
-			if (debounceTimeout) {
-				clearTimeout(debounceTimeout);
-			}
-
-			debounceTimeout = setTimeout(() => {
-				treeDataProvider.fetchAST();
-			}, 100)
+			treeDataProvider.fetchAstWithTimeout(100)
 		});
+
+		// Listen for document content changes
+		vscode.workspace.onDidChangeTextDocument((e) => {
+			if (e.document === vscode.window.activeTextEditor?.document && view.visible) {
+				treeDataProvider.fetchAstWithTimeout(300)
+			}
+		});
+
+		
+		vscode.window.onDidChangeActiveTextEditor((e) => {
+			if (view.visible) {
+				treeDataProvider.fetchAst();
+			}
+		})
 
 		view.onDidChangeVisibility((e) => {
 			if (e.visible) {
-				treeDataProvider.fetchAST();
+				treeDataProvider.fetchAst();
 			}
 		})
 	})

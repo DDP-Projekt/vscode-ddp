@@ -6,7 +6,8 @@ import * as langsrv from 'vscode-languageclient/node';
 export class AstTreeDataProvider implements vscode.TreeDataProvider<TreeItem> {
 	private _onDidChangeTreeData: vscode.EventEmitter<TreeItem | undefined> = new vscode.EventEmitter<TreeItem | undefined>();
 	readonly onDidChangeTreeData: vscode.Event<TreeItem | undefined> = this._onDidChangeTreeData.event;
-	private ast: TreeItem[]; // Store AST from LSP
+	
+	private ast: TreeItem[];
 	private lsp: langsrv.LanguageClient
 
 	constructor(lsp: langsrv.LanguageClient) {
@@ -14,8 +15,19 @@ export class AstTreeDataProvider implements vscode.TreeDataProvider<TreeItem> {
 		this.lsp = lsp
 	}
 
+	private debounceTimeout: NodeJS.Timeout | null = null
+	public async fetchAstWithTimeout(ms: number) {
+		if (this.debounceTimeout) {
+			clearTimeout(this.debounceTimeout);
+		}
+
+		this.debounceTimeout = setTimeout(() => {
+			this.fetchAst();
+		}, ms)
+	}
+
 	// Fetch the AST from the LSP server
-	public async fetchAST() {
+	public async fetchAst() {
 		const document = vscode.window.activeTextEditor?.document;
 		const selection = vscode.window.activeTextEditor?.selection;
 
@@ -48,7 +60,7 @@ export class AstTreeDataProvider implements vscode.TreeDataProvider<TreeItem> {
 			// Root items
 			return Promise.resolve(this.ast);
 		}
-		// Child nodes (can be expanded based on your data structure)
+
 		if (!element.children) {
 			return Promise.reject()
 		}
