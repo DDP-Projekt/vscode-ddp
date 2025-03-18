@@ -6,7 +6,8 @@ import * as path from 'path';
 import * as os from 'os';
 import * as fs from 'fs';
 import { lookpath } from 'lookpath';
-import { AstTreeDataProvider } from './ast'
+import './ast'
+import { register } from './ast';
 
 let DDPPATH = process.env.DDPPATH;
 
@@ -121,49 +122,11 @@ export async function activate(ctx: vscode.ExtensionContext) {
 		terminal.sendText(command);
 	}));
 
-	lspClient.onReady().then(x => {
-		// Register the tree data provider
-		const treeDataProvider = new AstTreeDataProvider(lspClient);
+	ctx.subscriptions.push(vscode.commands.registerCommand('ddp.ast.show', () => {
+		vscode.commands.executeCommand("ast-view-tree.focus")
+	}))
 
-		// Register the TreeView in the sidebar
-		const view = vscode.window.createTreeView('ast-view-tree', {
-			treeDataProvider: treeDataProvider
-		});
-
-		ctx.subscriptions.push(vscode.commands.registerCommand('ddp.showAST', () => {
-			vscode.commands.executeCommand("ast-view-tree.focus")
-		}))
-
-		let prevSelectionEmpty = false
-		// Listen for changes in the text editor's selection
-		vscode.window.onDidChangeTextEditorSelection((e) => {
-			if (!view.visible) return
-			if (prevSelectionEmpty && e.selections[0].isEmpty) return
-
-			prevSelectionEmpty = e.selections[0].isEmpty
-			treeDataProvider.fetchAstWithTimeout(100)
-		});
-
-		// Listen for document content changes
-		vscode.workspace.onDidChangeTextDocument((e) => {
-			if (e.document === vscode.window.activeTextEditor?.document && view.visible) {
-				treeDataProvider.fetchAstWithTimeout(300)
-			}
-		});
-
-		
-		vscode.window.onDidChangeActiveTextEditor((e) => {
-			if (view.visible) {
-				treeDataProvider.fetchAst();
-			}
-		})
-
-		view.onDidChangeVisibility((e) => {
-			if (e.visible) {
-				treeDataProvider.fetchAst();
-			}
-		})
-	})
+	lspClient.onReady().then(() => register(ctx, lspClient))
 }
 
 export function deactivate() { }

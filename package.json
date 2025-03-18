@@ -76,8 +76,18 @@
 				"icon": "$(run)"
 			},
 			{
-				"command": "ddp.showAST",
+				"command": "ddp.ast.show",
 				"title": "DDP: Show AST"
+			},
+			{
+				"command": "ddp.ast.refresh",
+				"title": "DDP: Refresh AST Tree",
+				"icon": "$(refresh)"
+			},
+			{
+				"command": "ddp.ast.goToNode",
+				"title": "DDP: Go to Node",
+				"icon": "$(symbol-reference)"
 			}
 		],
 		"viewsContainers": {
@@ -85,7 +95,7 @@
 				{
 					"id": "ast-view",
 					"title": "DDP: AST Anzeige",
-					"icon": "icons/ddp-logo.png"
+					"icon": "$(list-tree)"
 				}
 			]
 		},
@@ -126,6 +136,20 @@
 					"when": "resourceLangId == ddp",
 					"group": "navigation"
 				}
+			],
+			"view/title": [
+				{
+					"command": "ddp.ast.refresh",
+					"when": "view == ast-view-tree",
+					"group": "navigation"
+				}
+			],
+			"view/item/context": [
+				{
+					"command": "ddp.ast.goToNode",
+					"when": "view == ast-view-tree",
+					"group": "inline"
+				}
 			]
 		},
 		"views": {
@@ -133,7 +157,7 @@
 				{
 					"id": "ast-view-tree",
 					"name": "AST",
-					"icon": "folder",
+					"icon": "",
 					"type": "tree",
 					"visibility": "hidden"
 				}
