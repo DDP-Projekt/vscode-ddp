@@ -121,17 +121,42 @@ export async function activate(ctx: vscode.ExtensionContext) {
 		terminal.sendText(command);
 	}));
 	
-	let showCommand = vscode.commands.registerCommand('ddp.showAST', () => {
-		// Register the tree data provider
-		const treeDataProvider = new AstTreeDataProvider(lspClient);
+	lspClient.onReady().then(x => {
+	// Register the tree data provider
+	const treeDataProvider = new AstTreeDataProvider(lspClient);
 
-		// Register the TreeView in the sidebar
-		vscode.window.createTreeView('simpleTreeView', {
-			treeDataProvider: treeDataProvider
-		});
+	// Register the TreeView in the sidebar
+	const view = vscode.window.createTreeView('ast-view-tree', {
+		treeDataProvider: treeDataProvider
 	});
 
-	ctx.subscriptions.push(showCommand);
+	ctx.subscriptions.push(vscode.commands.registerCommand('ddp.showAST', () => {
+		vscode.commands.executeCommand("ast-view-tree.focus")
+	}))
+
+	let prevSelectionEmpty = false
+	let debounceTimeout: NodeJS.Timeout | null  = null
+		// Listen for changes in the text editor's selection
+		vscode.window.onDidChangeTextEditorSelection((e) => {
+			if (!view.visible) return
+			if (prevSelectionEmpty && e.selections[0].isEmpty) return
+
+			prevSelectionEmpty = e.selections[0].isEmpty
+			if (debounceTimeout) {
+				clearTimeout(debounceTimeout);
+			}
+
+			debounceTimeout = setTimeout(() => {
+				treeDataProvider.fetchAST();
+			}, 100)
+		});
+
+		view.onDidChangeVisibility((e) => {
+			if (e.visible) {
+				treeDataProvider.fetchAST();
+			}
+		})
+	})
 }
 
 export function deactivate() { }

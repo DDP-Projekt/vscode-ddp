@@ -80,6 +80,15 @@
 				"title": "DDP: Show AST"
 			}
 		],
+		"viewsContainers": {
+			"activitybar": [
+				{
+					"id": "ast-view",
+					"title": "DDP: AST Anzeige",
+					"icon": "icons/ddp-logo.png"
+				}
+			]
+		},
 		"configuration": {
 			"title": "DDP",
 			"properties": {
@@ -120,11 +129,13 @@
 			]
 		},
 		"views": {
-			"explorer": [
+			"ast-view": [
 				{
-					"id": "simpleTreeView",
-					"name": "Simple Tree View",
-					"icon": "folder"
+					"id": "ast-view-tree",
+					"name": "AST",
+					"icon": "folder",
+					"type": "tree",
+					"visibility": "hidden"
 				}
 			]
 		}

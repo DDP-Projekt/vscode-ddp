@@ -7,22 +7,28 @@ export class AstTreeDataProvider implements vscode.TreeDataProvider<TreeItem> {
 	private _onDidChangeTreeData: vscode.EventEmitter<TreeItem | undefined> = new vscode.EventEmitter<TreeItem | undefined>();
 	readonly onDidChangeTreeData: vscode.Event<TreeItem | undefined> = this._onDidChangeTreeData.event;
 	private ast: TreeItem[]; // Store AST from LSP
+	private lsp: langsrv.LanguageClient
 
 	constructor(lsp: langsrv.LanguageClient) {
 		this.ast = []
-		this.fetchAST(lsp)
+		this.lsp = lsp
 	}
 
 	// Fetch the AST from the LSP server
-	private async fetchAST(lsp: langsrv.LanguageClient) {
+	public async fetchAST() {
 		const document = vscode.window.activeTextEditor?.document;
+		const selection = vscode.window.activeTextEditor?.selection;
 	
 		if (document) {
 			try {
-				const response: TreeItem[] = await lsp.sendRequest('custom/ast', {path: document.uri.toString()});
+				const response: TreeItem[] = await this.lsp.sendRequest('custom/ast', {
+					path: document.uri.toString(),
+					range: selection?.isEmpty ? null : selection
+				});
+				
 				this.ast = response
 				console.log(response)
-				this._onDidChangeTreeData.fire(undefined); // Refresh the tree with the AST
+				this.refresh()
 			} catch (error) {
 				vscode.window.showErrorMessage(`Error fetching AST: ${error}`);
 			}
