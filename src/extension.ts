@@ -120,22 +120,22 @@ export async function activate(ctx: vscode.ExtensionContext) {
 		terminal.show();
 		terminal.sendText(command);
 	}));
-	
+
 	lspClient.onReady().then(x => {
-	// Register the tree data provider
-	const treeDataProvider = new AstTreeDataProvider(lspClient);
+		// Register the tree data provider
+		const treeDataProvider = new AstTreeDataProvider(lspClient);
 
-	// Register the TreeView in the sidebar
-	const view = vscode.window.createTreeView('ast-view-tree', {
-		treeDataProvider: treeDataProvider
-	});
+		// Register the TreeView in the sidebar
+		const view = vscode.window.createTreeView('ast-view-tree', {
+			treeDataProvider: treeDataProvider
+		});
 
-	ctx.subscriptions.push(vscode.commands.registerCommand('ddp.showAST', () => {
-		vscode.commands.executeCommand("ast-view-tree.focus")
-	}))
+		ctx.subscriptions.push(vscode.commands.registerCommand('ddp.showAST', () => {
+			vscode.commands.executeCommand("ast-view-tree.focus")
+		}))
 
-	let prevSelectionEmpty = false
-	let debounceTimeout: NodeJS.Timeout | null  = null
+		let prevSelectionEmpty = false
+		let debounceTimeout: NodeJS.Timeout | null = null
 		// Listen for changes in the text editor's selection
 		vscode.window.onDidChangeTextEditorSelection((e) => {
 			if (!view.visible) return

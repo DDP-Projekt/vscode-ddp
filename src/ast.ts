@@ -18,14 +18,14 @@ export class AstTreeDataProvider implements vscode.TreeDataProvider<TreeItem> {
 	public async fetchAST() {
 		const document = vscode.window.activeTextEditor?.document;
 		const selection = vscode.window.activeTextEditor?.selection;
-	
+
 		if (document) {
 			try {
 				const response: TreeItem[] = await this.lsp.sendRequest('custom/ast', {
 					path: document.uri.toString(),
 					range: selection?.isEmpty ? null : selection
 				});
-				
+
 				this.ast = response
 				console.log(response)
 				this.refresh()
@@ -64,7 +64,7 @@ export class AstTreeDataProvider implements vscode.TreeDataProvider<TreeItem> {
 class TreeItem extends vscode.TreeItem {
 	children?: TreeItem[]
 	iconId: string
-	
+
 	constructor(id: string, iconId: string) {
 		super(id);
 		this.iconId = iconId
