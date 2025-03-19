@@ -65,14 +65,12 @@ function registerGoToNodeBtn(ctx: vscode.ExtensionContext) {
 
 let oldDelay = 0;
 function registerNodePickerBtn(ctx: vscode.ExtensionContext, treeDataProvider: AstTreeDataProvider, view: vscode.TreeView<TreeItem>) {
-	const editor = vscode.window.activeTextEditor;
-
 	const nodePickerOutline = vscode.window.createTextEditorDecorationType({
 		backgroundColor: 'rgba(0, 255, 200, 0.3)',
 	});
 
 	ctx.subscriptions.push(vscode.commands.registerCommand('ddp.ast.nodePicker', () => {
-		editor?.setDecorations(nodePickerOutline, []);
+		vscode.window.activeTextEditor?.setDecorations(nodePickerOutline, []);
 		nodePickerMode = !nodePickerMode;
 		const configuration = vscode.workspace.getConfiguration()
 
@@ -88,6 +86,7 @@ function registerNodePickerBtn(ctx: vscode.ExtensionContext, treeDataProvider: A
 
 	ctx.subscriptions.push(vscode.languages.registerHoverProvider({ scheme: 'file', language: 'ddp' }, {
 		provideHover(document: vscode.TextDocument, position: vscode.Position) {
+			const editor = vscode.window.activeTextEditor;
 			if (!nodePickerMode) {
 				return;
 			}
