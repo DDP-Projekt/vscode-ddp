@@ -132,10 +132,6 @@ export async function activate(ctx: vscode.ExtensionContext) {
 		terminal.sendText(command);
 	}));
 
-	ctx.subscriptions.push(vscode.commands.registerCommand('ddp.ast.show', () => {
-		vscode.commands.executeCommand("ast-view-tree.focus");
-	}));
-
 	lspClient.onReady().then(() => register(ctx, lspClient));
 }
 

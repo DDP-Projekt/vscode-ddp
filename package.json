@@ -70,10 +70,6 @@
 				"icon": "$(run)"
 			},
 			{
-				"command": "ddp.ast.show",
-				"title": "DDP: Show AST"
-			},
-			{
 				"command": "ddp.ast.refresh",
 				"title": "DDP: Refresh AST Tree",
 				"icon": "$(refresh)"
@@ -129,6 +125,16 @@
 			}
 		},
 		"menus": {
+			"commandPalette": [
+				{
+					"command": "ddp.ast.nodePicker",
+					"when": "false"
+				},
+				{
+					"command": "ddp.ast.goToNode",
+					"when": "false"
+				}
+			],
 			"editor/title/run": [
 				{
 					"command": "ddp.run.file",
