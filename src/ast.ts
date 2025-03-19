@@ -63,6 +63,7 @@ function registerGoToNodeBtn(ctx: vscode.ExtensionContext) {
 	}));
 }
 
+let oldDelay = 0;
 function registerNodePickerBtn(ctx: vscode.ExtensionContext, treeDataProvider: AstTreeDataProvider, view: vscode.TreeView<TreeItem>) {
 	const editor = vscode.window.activeTextEditor;
 
@@ -73,6 +74,16 @@ function registerNodePickerBtn(ctx: vscode.ExtensionContext, treeDataProvider: A
 	ctx.subscriptions.push(vscode.commands.registerCommand('ddp.ast.nodePicker', () => {
 		editor?.setDecorations(nodePickerOutline, []);
 		nodePickerMode = !nodePickerMode;
+		const configuration = vscode.workspace.getConfiguration()
+
+		if (nodePickerMode) {
+			// set hover.delay to 0 to make the picker fast
+			oldDelay = configuration.get("editor.hover.delay") ?? 300
+			configuration.update("editor.hover.delay", 0, vscode.ConfigurationTarget.Global)
+		} else {
+			// restore old delay setting
+			configuration.update("editor.hover.delay", oldDelay, vscode.ConfigurationTarget.Global)
+		}
 	}));
 
 	ctx.subscriptions.push(vscode.languages.registerHoverProvider({ scheme: 'file', language: 'ddp' }, {
