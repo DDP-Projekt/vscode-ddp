@@ -72,15 +72,15 @@ function registerNodePickerBtn(ctx: vscode.ExtensionContext, treeDataProvider: A
 	ctx.subscriptions.push(vscode.commands.registerCommand('ddp.ast.nodePicker', () => {
 		vscode.window.activeTextEditor?.setDecorations(nodePickerOutline, []);
 		nodePickerMode = !nodePickerMode;
-		const configuration = vscode.workspace.getConfiguration()
+		const configuration = vscode.workspace.getConfiguration();
 
 		if (nodePickerMode) {
 			// set hover.delay to 0 to make the picker fast
-			oldDelay = configuration.get("editor.hover.delay") ?? 300
-			configuration.update("editor.hover.delay", 0, vscode.ConfigurationTarget.Global)
+			oldDelay = configuration.get("editor.hover.delay") ?? 300;
+			configuration.update("editor.hover.delay", 0, vscode.ConfigurationTarget.Global);
 		} else {
 			// restore old delay setting
-			configuration.update("editor.hover.delay", oldDelay, vscode.ConfigurationTarget.Global)
+			configuration.update("editor.hover.delay", oldDelay, vscode.ConfigurationTarget.Global);
 		}
 	}));
 
