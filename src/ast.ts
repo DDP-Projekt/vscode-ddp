@@ -52,13 +52,13 @@ function registerGoToNodeBtn(ctx: vscode.ExtensionContext) {
 		if (editor) {
 			editor.selections = [new vscode.Selection(x.range.start, x.range.start)];
 			editor.revealRange(x.range);
-			
+
 			// highlight node for 1s
 			editor.setDecorations(highlightDecorationType, [x.range]);
 			if (highlightTimer) {
 				clearTimeout(highlightTimer);
 			}
-			highlightTimer = setTimeout(() => editor.setDecorations(highlightDecorationType, []), 1000);
+			highlightTimer = setTimeout(() => editor?.setDecorations(highlightDecorationType, []), 1000);
 		}
 	}));
 }
@@ -108,7 +108,7 @@ function registerNodePickerBtn(ctx: vscode.ExtensionContext, treeDataProvider: A
 export class AstTreeDataProvider implements vscode.TreeDataProvider<TreeItem> {
 	private _onDidChangeTreeData: vscode.EventEmitter<TreeItem | undefined> = new vscode.EventEmitter<TreeItem | undefined>();
 	readonly onDidChangeTreeData: vscode.Event<TreeItem | undefined> = this._onDidChangeTreeData.event;
-	
+
 	private ast: TreeItem[];
 	private lsp: langsrv.LanguageClient;
 	public viewVisible: boolean;
@@ -128,7 +128,7 @@ export class AstTreeDataProvider implements vscode.TreeDataProvider<TreeItem> {
 		this.debounceTimeout = setTimeout(() => this.fetchAst(), ms);
 	}
 
-	public findNode(position: vscode.Position) : TreeItem | undefined {
+	public findNode(position: vscode.Position): TreeItem | undefined {
 		try {
 			return this.findNodeInternal(this.ast, position);
 		}
@@ -136,7 +136,7 @@ export class AstTreeDataProvider implements vscode.TreeDataProvider<TreeItem> {
 			vscode.window.showErrorMessage(`Error finding Node: ${error}`);
 		}
 	}
-	
+
 	private findNodeInternal(tree: TreeItem[], position: vscode.Position): TreeItem | undefined {
 		for (const item of tree) {
 			if (item.label !== "ImportStmt" && item.children) {
@@ -147,10 +147,10 @@ export class AstTreeDataProvider implements vscode.TreeDataProvider<TreeItem> {
 			}
 
 			// Check if the position is within the range of this TreeItem
-			if (item.range.start.line <= position.line && item.range.start.character <= position.character 
+			if (item.range.start.line <= position.line && item.range.start.character <= position.character
 				&& item.range.end.line >= position.line && item.range.end.character >= position.character) {
 				return item;
-			}	
+			}
 		}
 
 		return undefined;  // Return undefined if no node is found at the position
@@ -177,7 +177,7 @@ export class AstTreeDataProvider implements vscode.TreeDataProvider<TreeItem> {
 		} catch (error) {
 			vscode.window.showErrorMessage(`Error fetching AST: ${error}`);
 		}
-		
+
 		this.refresh();
 	}
 
@@ -185,8 +185,8 @@ export class AstTreeDataProvider implements vscode.TreeDataProvider<TreeItem> {
 	getTreeItem(element: TreeItem): vscode.TreeItem {
 		if (element.iconId) {
 			element.iconPath = new vscode.ThemeIcon(element.iconId);
-			element.tooltip = `Start: [L:${element.range.start.line+1}, C: ${element.range.start.character+1}]\n`
-			+ `End: [L:${element.range.end.line+1}, C: ${element.range.end.character+1}]`;
+			element.tooltip = `Start: [L:${element.range.start.line + 1}, C: ${element.range.start.character + 1}]\n`
+				+ `End: [L:${element.range.end.line + 1}, C: ${element.range.end.character + 1}]`;
 		}
 
 		return element;
