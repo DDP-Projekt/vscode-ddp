@@ -13,7 +13,7 @@
 		"url": "https://github.com/DDP-Projekt/vscode-ddp"
 	},
 	"engines": {
-		"vscode": "^1.68.0"
+		"vscode": "^1.75.0"
 	},
 	"categories": [
 		"Programming Languages",
